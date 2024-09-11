@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-connector
+  namespace: name-namespace
+  labels:
+    app: db-connector
+spec:
+  selector:
+    app: db-connector
+  ports:
+    - protocol: TCP
+      port: 8991  # Port yang diekspos di luar pod
+      targetPort: 8081  # Port internal dalam container
+  type: LoadBalancer  # Menggunakan LoadBalancer dengan NodePort yang ditentukan
