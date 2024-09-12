@@ -66,16 +66,10 @@ Proyek ini adalah implementasi sederhana dari sistem Toko Online dengan operasi 
 4. **Simpan Tabel**:
    - Setelah semua kolom dan relasi didefinisikan, klik **Save** untuk membuat tabel tersebut di database.
 
-#### Contoh Pembuatan Tabel `Users`:
+#### Contoh Pembuatan Tabel dengan SQL DBeaver:
 
 1. **Create Table `Users`** di DBeaver:
-   - Nama Tabel: `Users`
-   - Kolom:
-     - `id` (INT, Primary Key, Auto Increment)
-     - `username` (VARCHAR(50))
-     - `email` (VARCHAR(100))
-     - `password` (VARCHAR(255))
-
+ 
 ```sql
 CREATE TABLE Users (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -83,6 +77,58 @@ CREATE TABLE Users (
   email VARCHAR(100) NOT NULL,
   password VARCHAR(255) NOT NULL
 );
+```
+
+2. **Create Table `Products`** di DBeaver:
+ 
+```sql
+CREATE TABLE Products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    stock INT NOT NULL
+);
+```
+
+3. **Create Table `Orders`** di DBeaver:
+ 
+```sql
+CREATE TABLE Orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+```
+
+4. **Create Table `OrderItems`** di DBeaver:
+ 
+```sql
+CREATE TABLE OrderItems (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT,
+    product_id INT,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES Orders(id),
+    FOREIGN KEY (product_id) REFERENCES Products(id)
+);
+```
+
+5. **Create Table `Addresses`** di DBeaver:
+ 
+```sql
+CREATE TABLE Addresses (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT UNIQUE, -- Foreign key harus unique agar menjaga relasi one-to-one
+    street VARCHAR(255),
+    city VARCHAR(100),
+    postal_code VARCHAR(20),
+    country VARCHAR(100),
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+```
+
 
 ### CRUD Operations
 
@@ -103,3 +149,4 @@ Berikut adalah operasi CRUD untuk masing-masing entitas di Toko Online.
       email
     }
   }
+  ```
