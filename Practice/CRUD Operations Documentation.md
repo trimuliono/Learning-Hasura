@@ -1,6 +1,5 @@
 # Toko Online - CRUD Operations Documentation
 
-## Tugas yang Dikerjakan oleh: Tri
 
 ### Overview
 Proyek ini adalah implementasi sederhana dari sistem Toko Online dengan operasi CRUD (Create, Read, Update, Delete) yang diimplementasikan menggunakan **Hasura GraphQL**. Database yang digunakan adalah **MySQL** dan terhubung dengan Hasura untuk memungkinkan mutasi CRUD.
