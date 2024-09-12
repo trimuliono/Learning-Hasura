@@ -1,6 +1,3 @@
-# Contoh isi README.md untuk tugas CRUD Toko Online (dalam format markdown)
-
-readme_content = """
 # Toko Online - CRUD Operations Documentation
 
 ## Tugas yang Dikerjakan oleh: Tri
