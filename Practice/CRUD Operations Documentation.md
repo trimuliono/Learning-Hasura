@@ -131,7 +131,7 @@ CREATE TABLE Addresses (
 
 ### CRUD Operations
 
-Berikut adalah operasi CRUD untuk masing-masing entitas di Toko Online.
+Berikut adalah operasi CRUD di graphQL untuk masing-masing entitas di Toko Online.
 
 #### 1. Users
 
@@ -139,8 +139,8 @@ Berikut adalah operasi CRUD untuk masing-masing entitas di Toko Online.
   ```graphql
   mutation {
     insert_Users_one(object: {
-      username: "tri",
-      email: "tri@example.com",
+      username: "dodo",
+      email: "dodo@example.com",
       password: "hashed_password"
     }) {
       id
@@ -149,3 +149,6 @@ Berikut adalah operasi CRUD untuk masing-masing entitas di Toko Online.
     }
   }
   ```
+  Berikut adalah outputnya:
+  ![image](https://github.com/user-attachments/assets/c327f8cd-d6dc-4045-9c78-f93cdaca9420)
+
