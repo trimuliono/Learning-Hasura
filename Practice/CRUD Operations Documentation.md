@@ -6,6 +6,14 @@ Proyek ini adalah implementasi sederhana dari sistem Toko Online dengan operasi 
 
 ### Struktur Tabel dan Relasi
 
+![image](https://github.com/user-attachments/assets/9db2b428-403b-4412-be3b-ae3046870041)
+
+#### Relasi antar Tabel
+- `Users (1) -> Addresses (1)`
+- `Users (1) —> Orders (N)`
+- `Orders (1) —> OrderItems (N)`
+- `Products (1) —> OrderItems (N)`
+
 #### 1. Users
 - **Columns**:
   - `id` (integer, Primary Key, Auto-increment)
@@ -42,9 +50,6 @@ Proyek ini adalah implementasi sederhana dari sistem Toko Online dengan operasi 
   - `city` (string)
   - `postal_code` (string)
   - `country` (string)
- 
-![image](https://github.com/user-attachments/assets/9db2b428-403b-4412-be3b-ae3046870041)
-
 
 ### Cara Membuat Tabel Menggunakan DBeaver
 
