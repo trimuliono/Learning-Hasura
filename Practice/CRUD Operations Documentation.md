@@ -350,4 +350,18 @@ Lalu, di bagian Query Variables (biasanya di bagian bawah panel GraphQL):
   Berikut adalah outputnya:  
   ![image](https://github.com/user-attachments/assets/8b517b76-e04d-4694-b479-56008a33ff62)
 
+#### Mutasi Update
 
+**Update Users by PK**
+  ```
+    mutation  {
+    update_Users_by_pk(pk_columns: {id: 10}, _set: {username: "username update", password: "pass update"}) {
+      id
+      username
+      email
+      password
+    }
+  }
+  ```
+  Berikut adalah outputnya:
+  ![image](https://github.com/user-attachments/assets/73340e98-ae66-4e21-bcff-1d23888813e5)
