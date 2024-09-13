@@ -42,6 +42,9 @@ Proyek ini adalah implementasi sederhana dari sistem Toko Online dengan operasi 
   - `city` (string)
   - `postal_code` (string)
   - `country` (string)
+ 
+![image](https://github.com/user-attachments/assets/9db2b428-403b-4412-be3b-ae3046870041)
+
 
 ### Cara Membuat Tabel Menggunakan DBeaver
 
