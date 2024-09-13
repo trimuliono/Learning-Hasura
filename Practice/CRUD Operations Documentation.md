@@ -365,3 +365,24 @@ Lalu, di bagian Query Variables (biasanya di bagian bawah panel GraphQL):
   ```
   Berikut adalah outputnya:
   ![image](https://github.com/user-attachments/assets/73340e98-ae66-4e21-bcff-1d23888813e5)
+
+#### Mutasi Delete
+
+**Delete Users by PK**
+  ```
+    mutation  {
+    update_Users_by_pk(id: 12) {
+      id
+      username
+      email
+      password
+    }
+  }
+  ```
+  Berikut adalah outputnya:
+  ![image](https://github.com/user-attachments/assets/9249910d-a06d-416c-b534-2fb14cd24960)
+
+  id 12 sudah terdelete
+  ![image](https://github.com/user-attachments/assets/e295ceec-d642-4113-8fd8-b9c1232dbb29)
+
+
