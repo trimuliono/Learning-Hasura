@@ -296,4 +296,27 @@ Lalu, di bagian Query Variables (biasanya di bagian bawah panel GraphQL):
   Berikut adalah outputnya:
   ![image](https://github.com/user-attachments/assets/04a4a25c-b020-482d-a7ef-ce2819854ac2)
 
+#### Insert Batch
+- Hal ini digunakan untuk menambahkan data banyak baris dalam satu kali insert sebagai berikut:
+
+- **Insert Batch User**
+  ```graphql
+  mutation {
+    insert_Users(objects: [
+      {username: "dodo2", email: "dodo2@example.com", password: "hashed2_password"},
+      {username: "dodo3", email: "dodo3@example.com", password: "hashed3_password"},
+      {username: "dodo4", email: "dodo4@example.com", password: "hashed4_password"}
+    ]) {
+      returning {
+        id
+        username
+        email
+        password
+      }
+    }
+  }
+  ```
+  
+  Berikut adalah outputnya:
+  ![image](https://github.com/user-attachments/assets/cb9a322e-55b3-447b-a8be-d00d154d7f69)
 
