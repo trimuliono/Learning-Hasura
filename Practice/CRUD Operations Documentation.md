@@ -336,6 +336,26 @@ Lalu, di bagian Query Variables (biasanya di bagian bawah panel GraphQL):
   Berikut adalah outputnya:
   ![image](https://github.com/user-attachments/assets/20ae5664-f54e-4698-a66f-2e2193bd4a5b)
 
+**Get User join Addresses **
+  ```graphql
+  query MyQuery {
+    Users {
+      id
+      username
+      Addresses {
+        user_id
+        street
+        city
+        country
+        postal_code
+      }
+    }
+  }
+  ```
+  Berikut adalah outputnya:  
+  ![image](https://github.com/user-attachments/assets/5da5b172-053f-47cd-9ea3-a462e69181f4)
+
+
 **Get User by PK**
   ```graphql
   query {
@@ -349,6 +369,20 @@ Lalu, di bagian Query Variables (biasanya di bagian bawah panel GraphQL):
   ```
   Berikut adalah outputnya:  
   ![image](https://github.com/user-attachments/assets/8b517b76-e04d-4694-b479-56008a33ff62)
+
+**Get User by email**
+  ```graphql
+  query MyQuery {
+    Users(where: {email: {_eq: "john@example.com"}}) {
+      id
+      username
+      email
+    }
+  }
+  ```
+  Berikut adalah outputnya:  
+  ![image](https://github.com/user-attachments/assets/0f544723-700c-4d9b-8f50-c5ec35d7da42)
+
 
 #### Mutasi Update
 
