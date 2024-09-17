@@ -421,6 +421,12 @@ Operator _like digunakan untuk mencocokkan data berdasarkan pola. Operator ini b
   - dodo_@example.com menunjukkan bahwa "_" bisa berisi apa saja namun tepat mewakili hanya satu karakter.
   - Wildcard _ Mewakili tepat satu karakter.
 
+#### `affected_rows` di Hasura GraphQL
+`affected_rows` adalah bagian dari hasil mutasi di Hasura GraphQL yang menunjukkan jumlah baris dalam tabel database yang terpengaruh (diubah) oleh operasi mutasi seperti insert, update, atau delete.
+
+`affected_rows` sangat berguna untuk:
+1. Mengetahui berapa banyak baris yang berhasil diubah atau dihapus.
+2. Memastikan operasi mutasi telah berjalan sesuai dengan yang diharapkan.
 
 **Get User by email**
   ```graphql
