@@ -370,6 +370,58 @@ Lalu, di bagian Query Variables (biasanya di bagian bawah panel GraphQL):
   Berikut adalah outputnya:  
   ![image](https://github.com/user-attachments/assets/8b517b76-e04d-4694-b479-56008a33ff62)
 
+#### Perbedaan dan Cara Kerja _eq dan _like di Hasura GraphQL
+Dalam Hasura GraphQL, _eq dan _like adalah operator yang digunakan dalam query untuk menyaring (filter) data berdasarkan kondisi tertentu pada kolom tabel. Kedua operator ini bekerja dengan cara yang berbeda, tergantung pada jenis pencocokan data yang diinginkan.
+
+**1. Operator _eq (Equal)**
+Operator _eq digunakan untuk mencocokkan nilai secara persis. Ini serupa dengan operator = dalam SQL. Jika Anda ingin mencari data yang tepat sama dengan nilai yang diberikan, Anda menggunakan _eq.
+
+**2. Operator _like (Pattern Matching)**
+Operator _like digunakan untuk mencocokkan data berdasarkan pola. Operator ini bekerja seperti LIKE dalam SQL dan memungkinkan Anda menggunakan wildcard (karakter pengganti) untuk mencocokkan sebagian string.
+
+  - Operator _like memungkinkan Anda mencari pola dalam string dengan menggunakan:
+    - `%`: Mewakili nol atau lebih karakter.
+    - `_`: Mewakili tepat satu karakter.
+
+  **Contoh Penggunaan 1**
+  Misalnya, Anda ingin mencari pengguna yang email-nya mengandung kata "dodo".
+  
+  ```graphql
+    query MyQuery {
+    Users(where: {email: {_like: "%dodo%"}}) {
+        id
+        username
+        email
+      }
+    }
+  ```
+  Berikut adalah outputnya:
+  ![image](https://github.com/user-attachments/assets/e584125b-3f04-4236-a27b-503a9ae5d008)
+  
+  Pada query ini:
+  - %dodo% menunjukkan bahwa "dodo" bisa berada di mana saja dalam string (awal, tengah, atau akhir).
+  - Wildcard % memungkinkan pencocokan string yang lebih fleksibel.
+
+**Contoh Penggunaan 2**
+  Misalnya, Anda ingin mencari pengguna yang email-nya mengandung kata "dodo*@example.com".
+  
+  ```graphql
+    query MyQuery {
+    Users(where: {email: {_like: "dodo_@example.com"}}) {
+        id
+        username
+        email
+      }
+    }
+  ```
+  Berikut adalah outputnya:
+  ![image](https://github.com/user-attachments/assets/8b44a99a-3ae5-4ccb-8710-62b057703be1)
+
+  Pada query ini:
+  - dodo_@example.com menunjukkan bahwa "_" bisa berisi apa saja namun tepat mewakili hanya satu karakter.
+  - Wildcard _ Mewakili tepat satu karakter.
+
+
 **Get User by email**
   ```graphql
   query MyQuery {
