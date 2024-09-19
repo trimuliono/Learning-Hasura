@@ -69,3 +69,13 @@ query Todos {
 Berikut Outputnya:
 ![image](https://github.com/user-attachments/assets/1aa20e0a-9d33-4c54-84ec-7714ea06b51d)
 
+#### Query Using HTTP Request
+Selain menggunakan GraphQL Request, query juga dapat dilakukan dengan HTTP Request. Untuk penulisan query juga bisa dilakukan dengan format GraphQL maupun format Json.
+
+Berikut contoh Untuk Query Using HTTP Request dengan input body format GraphQL:
+![image](https://github.com/user-attachments/assets/783b3813-ece8-4515-993d-add6e10a25d2)
+
+Berikut contoh Untuk Query Using HTTP Request dengan input body format Json:
+![image](https://github.com/user-attachments/assets/0dcaaa1d-fac4-4dff-8fa9-dc7b0fe7ad78)
+
+
