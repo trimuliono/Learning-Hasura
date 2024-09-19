@@ -16,8 +16,11 @@ Navigasi ke Remote Schemas dan tambahkan remote schema dengan URL remote shcemas
 Berikan nama untuk remote schema ini, misalnya: remote_schema_example.
 
 ![image](https://github.com/user-attachments/assets/08f6a45a-7f08-4577-ab08-173ef9080a95)
+
 ![image](https://github.com/user-attachments/assets/5f5cef13-f6d0-4d6a-a1f2-3c20cf510ab3)
+
 ![image](https://github.com/user-attachments/assets/b9e12f54-8b63-4dbd-925f-97cfb69f5d2a)
+
 ![image](https://github.com/user-attachments/assets/bc3cf647-82f7-4a75-90ae-27093cfc9eda)
 
 ### 2. URL Endpoint Hasura di Postman
@@ -52,30 +55,37 @@ maka semua query pada schema akan muncul dan dapat digunakan seperti pada Hasuar
 
 
 ### 4. Tes Query Remote Shcemas
-Untuk melakukan `query` dapat dilakukan dengan dua sama sama seperti pada hasura console, yaitu dapat dengan men-klik pada checkbox query di sebelah kiri atau dapat langsung mengetik query secara langsung di sebelah kanan.
-Dalam hal ini, akan saya contohkan untuk `query table todos`
 
-```json
-query Todos {
-    todos {
-        id
-        text
-        done
-    }
-}
-```
-![image](https://github.com/user-attachments/assets/aa1b2738-c126-446c-acbc-d88b58a33fa1)
-
-Berikut Outputnya:
-![image](https://github.com/user-attachments/assets/1aa20e0a-9d33-4c54-84ec-7714ea06b51d)
-
-#### Query Using HTTP Request
-Selain menggunakan GraphQL Request, query juga dapat dilakukan dengan HTTP Request. Untuk penulisan query juga bisa dilakukan dengan format GraphQL maupun format Json.
-
-Berikut contoh Untuk Query Using HTTP Request dengan input body format GraphQL:
-![image](https://github.com/user-attachments/assets/783b3813-ece8-4515-993d-add6e10a25d2)
-
-Berikut contoh Untuk Query Using HTTP Request dengan input body format Json:
-![image](https://github.com/user-attachments/assets/0dcaaa1d-fac4-4dff-8fa9-dc7b0fe7ad78)
-
+  #### Query Using GraphQL Request
+  Untuk melakukan `query` dapat dilakukan dengan dua cara yang sama seperti pada hasura console, yaitu dapat dengan men-klik pada
+  checkbox query di sebelah kiri atau dapat langsung mengetik query secara langsung di sebelah kanan.
+  Dalam hal ini, akan saya contohkan untuk `query table todos`
+  
+  ```json
+  query Todos {
+      todos {
+          id
+          text
+          done
+      }
+  }
+  ```
+  ![image](https://github.com/user-attachments/assets/aa1b2738-c126-446c-acbc-d88b58a33fa1)
+  
+  Berikut Outputnya:
+  
+  ![image](https://github.com/user-attachments/assets/1aa20e0a-9d33-4c54-84ec-7714ea06b51d)
+  
+  #### Query Using HTTP Request
+  Selain menggunakan GraphQL Request, query juga dapat dilakukan dengan HTTP Request. Untuk penulisan query juga bisa dilakukan dengan
+  format GraphQL maupun format Json.
+  
+  Berikut contoh Untuk Query Using HTTP Request dengan input body format GraphQL:
+  
+  ![image](https://github.com/user-attachments/assets/783b3813-ece8-4515-993d-add6e10a25d2)
+  
+  Berikut contoh Untuk Query Using HTTP Request dengan input body format Json:
+  
+  ![image](https://github.com/user-attachments/assets/0dcaaa1d-fac4-4dff-8fa9-dc7b0fe7ad78)
+  
 
