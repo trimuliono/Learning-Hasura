@@ -12,8 +12,13 @@ Berikut adalah langkah-langkah detail yang harus dilakukan untuk mengirim query 
 Sebelum melakukan query dari Postman, pastikan bahwa remote schema di Hasura sudah dikonfigurasi dengan benar. Untuk menambahkannya:
 
 Buka Hasura Console.
-Navigasi ke Remote Schemas dan tambahkan remote schema dengan URL http://10.100.14.10:8989/query.
+Navigasi ke Remote Schemas dan tambahkan remote schema dengan URL remote shcemas yang ingin dihubungkan
 Berikan nama untuk remote schema ini, misalnya: remote_schema_example.
+
+![image](https://github.com/user-attachments/assets/08f6a45a-7f08-4577-ab08-173ef9080a95)
+![image](https://github.com/user-attachments/assets/5f5cef13-f6d0-4d6a-a1f2-3c20cf510ab3)
+![image](https://github.com/user-attachments/assets/b9e12f54-8b63-4dbd-925f-97cfb69f5d2a)
+![image](https://github.com/user-attachments/assets/bc3cf647-82f7-4a75-90ae-27093cfc9eda)
 
 ### 2. URL Endpoint Hasura di Postman
 Dalam Postman, Anda akan mengirimkan request ke endpoint GraphQL Hasura, bukan langsung ke remote schema. Endpoint-nya adalah:
@@ -23,30 +28,44 @@ http://10.100.14.6:8082/v1/graphql
 ```
 
 ### 3. Setel Headers di Postman
-Buat request baru di Postman dengan metode POST.
-Masukkan URL endpoint Hasura:
+- Buat request baru di Postman dengan type GraphQL
+![image](https://github.com/user-attachments/assets/1e93511c-8d5b-4aaf-b504-5114a41d4f51)
 
-```bash
-http://10.100.14.6:8082/v1/graphql
-```
+  - Masukkan URL endpoint Hasura:
+  
+    ```bash
+    http://10.100.14.6:8082/v1/graphql
+    ```
+    ![image](https://github.com/user-attachments/assets/eb3c33f7-364c-4735-8c24-82f461eedabe)
 
-![image](https://github.com/user-attachments/assets/3eed4cca-a995-4fe2-9553-ba6312627d85)
+  - Pada bagian Headers, tambahkan key-value `x-hasura-admin-secret`
+
+    ![image](https://github.com/user-attachments/assets/83734c9c-442d-4d5b-958c-42e7777e81b2)
+
+  - Klik Tab `Query` klik `Use GraphQL Introspection`
+
+    ![image](https://github.com/user-attachments/assets/8b4944c3-6065-465c-8777-e76b6dc46644)
+
+maka semua query pada schema akan muncul dan dapat digunakan seperti pada Hasuara Console
+
+![image](https://github.com/user-attachments/assets/aec6e405-dc82-4fa2-bbc5-1d45a23b974f)
 
 
-### 4. Tulis Query untuk Remote Schema di Body
-Di bagian Body, pilih opsi raw dan pilih format JSON. Kemudian, masukkan query yang akan mengakses remote schema yang telah ditambahkan di Hasura.
-
-Misalnya, jika Anda ingin melakukan query ke remote schema bernama remote_schema_example, query-nya bisa seperti ini:
-
-Contoh Query Sederhana:
+### 4. Tes Query Remote Shcemas
+Untuk melakukan `query` dapat dilakukan dengan dua sama sama seperti pada hasura console, yaitu dapat dengan men-klik pada checkbox query di sebelah kiri atau dapat langsung mengetik query secara langsung di sebelah kanan.
+Dalam hal ini, akan saya contohkan untuk `query table todos`
 
 ```json
-{
-  "query": "query MyRemoteSchemaQuery { remote_schema_example { field1 field2 } }"
+query Todos {
+    todos {
+        id
+        text
+        done
+    }
 }
 ```
+![image](https://github.com/user-attachments/assets/aa1b2738-c126-446c-acbc-d88b58a33fa1)
 
 Berikut Outputnya:
-
-![image](https://github.com/user-attachments/assets/0c9fd23b-af83-48d4-a4f8-4d2cb3cde9f7)
+![image](https://github.com/user-attachments/assets/1aa20e0a-9d33-4c54-84ec-7714ea06b51d)
 
