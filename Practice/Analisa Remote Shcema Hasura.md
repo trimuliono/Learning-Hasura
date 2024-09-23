@@ -47,6 +47,12 @@ Error yang terjadi:
 ```
 ![image](https://github.com/user-attachments/assets/edb6c99c-ff2e-4218-9b8c-0cf07ac96d72)
 
+Error ini terjadi karena Hasura tidak bisa menghubungi endpoint remote schema yang terhubung ke GQL Mas Ferdy. Pesan yang muncul adalah:
+
+  - "HTTP exception occurred while sending the request": Ini menunjukkan bahwa permintaan HTTP tidak berhasil dikirim.
+  - "Connection failure: Network.Socket.connect: does not exist (Connection refused)": Ini menunjukkan bahwa socket untuk koneksi ke server GQL Mas Ferdy tidak ditemukan karena instance-nya sudah mati.
+
+Kesimpulan: Hasura gagal melakukan remote request ke GQL Mas Ferdy karena service tidak aktif.
 
 Skenario 3: Lakukan Query dari Postman saat GQL Mas Ferdy Mati
 Langkah: Buat Query Menggunakan Postman
