@@ -87,5 +87,109 @@ maka semua query pada schema akan muncul dan dapat digunakan seperti pada Hasuar
   Berikut contoh Untuk Query Using HTTP Request dengan input body format Json:
   
   ![image](https://github.com/user-attachments/assets/0dcaaa1d-fac4-4dff-8fa9-dc7b0fe7ad78)
-  
+
+### 5. Analisis Query GraphQL
+
+#### Schema: todosGraphql
+
+##### Query 1: GetAllTodos
+
+```graphql
+query tri_GetAllTodos {
+    todos {
+      done
+      id
+      text
+      user {
+        id
+        name
+      }
+    }
+  }
+```
+**Penjelasan:** Query ini digunakan untuk mengambil semua data dari tabel todos beserta data usernya dikarenakan query diatas dijoinkan dengan tabel users. Setiap todo yang diambil akan menampilkan informasi status (done), ID todo (id), teks todo (text), serta data pengguna yang terkait dengan todo tersebut (ID dan nama pengguna).
+
+Berikut adalah hasil ketika diterapkan pada GraphQL di Postman:
+
+![image](https://github.com/user-attachments/assets/b2759020-49b8-4e7a-9383-5d194aefcbb6)
+
+##### Query 2: GetAllUsers
+
+```graphql
+query tri_GetAllUsers {
+    users {
+      id
+      name
+    }
+  }
+```
+**Penjelasan:** Query ini mengambil seluruh data pengguna (users) dari schema todosGraphql. Hanya dua atribut yang ditampilkan, yaitu ID pengguna (id) dan nama pengguna (name).
+
+Berikut adalah hasil ketika diterapkan pada GraphQL di Postman:
+
+![image](https://github.com/user-attachments/assets/86aa89f0-b414-48ce-bac2-53a19a262e89)
+Dari hasil di atas dapat diketahui bahwa jumlah data pada tabel users adalah satu.
+
+##### Query 3: todoByPK
+
+```graphql
+query tri_todoByPK {
+    todo(id: "1") {
+      done
+      id
+      text
+      user {
+        id
+        name
+      }
+    }
+    users {
+      id
+    }
+  }
+```  
+
+**Penjelasan:** Query ini mengambil data todo berdasarkan primary key, untuk pk pada tabel ini yaitu kolom `id`, dalam hal ini todo dengan ID "1". Informasi yang diambil meliputi status (done), ID (id), teks todo (text), dan data pengguna terkait (id dan name). Selain itu, query ini juga mengambil semua ID pengguna yang ada di dalam tabel users.
+
+Berikut adalah hasil ketika diterapkan pada GraphQL di Postman:
+
+![image](https://github.com/user-attachments/assets/13167c4c-1dbf-4c7a-a252-ea3314ea8007)
+Dari hasil di atas dapat diketahui bahwa data dengan `id = 1` tabel `todos` adalah user dengan nama **ferdy**.
+
+#### Schema: springbootGraphql
+
+##### Query 1: countAuthorsAndTutorials
+
+ ```graphql
+query tri_countAuthorsAndTutorials {
+    countAuthors
+    countTutorials
+}
+```
+
+**Penjelasan:** Query ini digunakan untuk menghitung total jumlah penulis (countAuthors) dan jumlah tutorial (countTutorials) di schema springbootGraphql.
+
+Berikut adalah hasil ketika diterapkan pada GraphQL di Postman.
+
+![image](https://github.com/user-attachments/assets/0cc908c3-b998-43ac-8e4e-51e8a27970a2)
+Dari hasil di atas dapat diketahui bahwa terdapat 1 row pada tabel `Authors` dan 2 rows pada tabel `Tutorials`.
+
+##### Query 2: getAllAuthors
+
+```graphql
+query tri_getAllAuthors {
+    findAllAuthors {
+      age
+      id
+      name
+    }
+}
+```
+
+**Penjelasan:** Query ini mengambil semua data penulis (findAllAuthors). Setiap penulis akan menampilkan informasi berupa umur (age), ID penulis (id), dan nama penulis (name).
+
+Berikut adalah hasil ketika diterapkan pada GraphQL di Postman.
+
+![image](https://github.com/user-attachments/assets/5c91ae52-89cf-4d25-9f65-8213a92aac10)
+Dari hasil di atas dapat diketahui bahwa terdapat 1 Author dengan data usia = 27, id = 1, dan nama = "bezkoder".
 
