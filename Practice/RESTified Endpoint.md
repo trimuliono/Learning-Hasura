@@ -30,4 +30,14 @@ Maka RESTified Endpoint, telah berhasil dibuat.
 
 ![image](https://github.com/user-attachments/assets/381b8d01-d8a3-44fd-a2a8-61b0782f340b)
 
+**2. Contoh RESTified Endpoint Query FindAll**
+
+![image](https://github.com/user-attachments/assets/e13ca7f0-763e-4cfc-ac2a-1dcd94f2ba16)
+
+**3. Contoh RESTified Endpoint Query find todo using where by id**
+
+![image](https://github.com/user-attachments/assets/0e655728-3707-40fe-a90b-ac9614d70589)
+
+
+
 
