@@ -26,3 +26,8 @@ Maka RESTified Endpoint, telah berhasil dibuat.
 
 ## Pengujian RESTified Endpoint Menggunakan Postman
 
+**1. Contoh RESTified Endpoint Query Join**
+
+![image](https://github.com/user-attachments/assets/381b8d01-d8a3-44fd-a2a8-61b0782f340b)
+
+
