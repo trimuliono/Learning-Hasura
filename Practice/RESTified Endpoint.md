@@ -38,6 +38,24 @@ Maka RESTified Endpoint, telah berhasil dibuat.
 
 ![image](https://github.com/user-attachments/assets/0e655728-3707-40fe-a90b-ac9614d70589)
 
+**4. Contoh RESTified Endpoint Query find todo by id using Parameter**
+
+```graphql
+query TrigetTodoById($id: ID!) {
+    todo(id: $id) {
+      done
+      id
+      text
+      user {
+        id
+        name
+      }
+    }
+}
+```
+
+![image](https://github.com/user-attachments/assets/73b803d0-0848-47c7-9f67-b5e6875fb534)
+
 
 
 
