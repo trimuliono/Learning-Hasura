@@ -29,3 +29,31 @@ Berikut adalah penjelasan mengenai setiap keluaran metrik yang disediakan oleh H
 - **Tipe**: Counter
 - **Label**:
   - `status`: Status apakah permintaan data ditemukan di cache ("hit") atau tidak ("miss").
+
+## 6. `hasura_cron_events_invocation_total`
+- **Deskripsi**: Menunjukkan total jumlah event cron yang dipanggil (invoke). Cron events adalah tugas terjadwal yang secara otomatis dijalankan pada waktu tertentu. Setiap kali cron event dijalankan, ia dihitung di sini.
+- **Tipe**: Counter
+- **Label**:
+  - `status`: Status apakah event cron berhasil ("success") atau gagal ("failed").
+
+## 7. `hasura_cron_events_processed_total`
+- **Deskripsi**: Jumlah total event cron yang sudah diproses. Ini berbeda dengan invocation karena hanya menghitung event yang telah selesai diproses, apakah berhasil atau gagal.
+- **Tipe**: Counter
+- **Label**:
+  - `status`: Status apakah pemrosesan event cron berhasil atau gagal.
+
+## 8. `hasura_event_fetch_time_per_batch_seconds`
+- **Deskripsi**: Metrik ini mengukur waktu yang dibutuhkan untuk mengambil satu batch event dari database. Satu batch bisa terdiri dari beberapa event. Metrik ini membantu memantau kinerja dan latensi saat mengambil event dari database.
+- **Tipe**: Histogram (menunjukkan distribusi waktu pengambilan event).
+
+## 9. `hasura_event_trigger_http_workers`
+- **Deskripsi**: Menunjukkan jumlah pekerja HTTP aktif yang sedang menangani pemicu event (event triggers). Ketika ada event baru yang dipicu, pekerja ini akan memproses permintaan HTTP yang terkait.
+- **Tipe**: Gauge
+
+## 10. `hasura_event_trigger_request_bytes_total`
+- **Deskripsi**: Total ukuran data (dalam byte) yang dikirim melalui HTTP sebagai bagian dari pemicu event. Ini adalah data yang dikirim ke endpoint eksternal saat event terpicu.
+- **Tipe**: Counter
+
+## 11. `hasura_event_trigger_response_bytes_total`
+- **Deskripsi**: Sama seperti di atas, tapi mengukur ukuran data yang diterima sebagai respons dari endpoint eksternal setelah pemicu event dijalankan.
+- **Tipe**: Counter
