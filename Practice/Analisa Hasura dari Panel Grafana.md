@@ -14,7 +14,7 @@ Pada dashboard pertama ini terdapat 3 group panel yaitu:
   
 ![image](https://github.com/user-attachments/assets/48ddef2d-a6de-4fd4-9845-b580ac987b2c)
 
-### 1.1 `Panel Overview` - Dashboard Hasura HTTP GraphQL
+### `1.1 Panel Overview` - Dashboard Hasura HTTP GraphQL
 Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagian *Overview* dari *Hasura HTTP GraphQL Dashboard* di Grafana. Setiap panel memberikan wawasan mengenai kinerja query dan mutasi GraphQL yang terjadi dalam Hasura.
 
   #### 1. **Total Queries**
@@ -33,6 +33,11 @@ Pada dashboard ini terdapat 7 panels.
      - `CONSISTENT` (hijau): Metadata konsisten dan tersinkronisasi di seluruh sistem Hasura.
      - `INCONSISTENT` (merah atau lainnya): Metadata memiliki perbedaan atau tidak sepenuhnya tersinkronisasi.
    - **Penggunaan:** Administrator harus memastikan bahwa metadata selalu `CONSISTENT`. Ketidakkonsistenan mungkin menunjukkan masalah dengan skema atau sinkronisasi sistem.
+
+  #### 2. **Query Latency (P95)**
+   - **Deskripsi:** Panel ini menampilkan latensi (dalam milidetik) dari *query* GraphQL. Latensi P95 berarti 95% dari permintaan memiliki latensi yang sama atau lebih rendah dari angka ini.
+   - **Nilai yang Ditampilkan:** Dalam gambar, nilai P95 dari latensi *query* adalah 27.0 ms.
+   - **Penggunaan:** Panel ini penting untuk memantau performa *query*. Jika latensi terlalu tinggi, hal ini bisa menandakan masalah performa di sisi server, seperti masalah dalam optimasi *query*, beban server, atau keterbatasan sumber daya.
 
   ### 2. **Health Check Menggunakan Infinity**
    - **Deskripsi:** Panel ini menampilkan status pemeriksaan kesehatan koneksi Hasura ke datasource Infinity.
