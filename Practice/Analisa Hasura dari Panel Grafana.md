@@ -37,6 +37,10 @@ Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagi
    - **Nilai yang Ditampilkan:** Pada gambar, nilai P95 dari latensi *mutation* adalah 9.50 ms.
    - **Penggunaan:** Latensi *mutation* penting karena operasi *mutation* mengubah data. Jika latensi terlalu tinggi, ini bisa mempengaruhi pengalaman pengguna dan efisiensi aplikasi. Sama seperti pada *query*, masalah performa perlu diidentifikasi.
 
+  #### 5. **Top Queries**
+   - **Deskripsi:** Panel ini biasanya akan menunjukkan *query-query* yang paling sering digunakan dalam aplikasi.
+   - **Nilai yang Ditampilkan:** Dalam gambar, tidak ada data yang ditampilkan.
+   - **Penggunaan:** Panel ini bermanfaat untuk mengidentifikasi *query* yang sering digunakan dan memerlukan optimasi lebih lanjut untuk meningkatkan performa aplikasi.
 
 ![image](https://github.com/user-attachments/assets/9a6df46d-3334-4dbc-b196-96fa71a3edd0)
 
