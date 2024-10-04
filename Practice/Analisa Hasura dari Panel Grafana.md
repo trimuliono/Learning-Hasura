@@ -22,6 +22,16 @@ Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagi
    - **Nilai yang Ditampilkan:** Dalam gambar, terdapat 12 *query* yang tercatat.
    - **Penggunaan:** Panel ini membantu melacak seberapa sering *query* GraphQL digunakan dalam aplikasi. Administrator bisa menggunakan data ini untuk memahami pola penggunaan dan mendeteksi lonjakan yang tidak wajar.
 
+  #### 2. **Query Latency (P95)**
+   - **Deskripsi:** Panel ini menampilkan latensi (dalam milidetik) dari *query* GraphQL. Latensi P95 berarti 95% dari permintaan memiliki latensi yang sama atau lebih rendah dari angka ini.
+   - **Nilai yang Ditampilkan:** Dalam gambar, nilai P95 dari latensi *query* adalah 27.0 ms.
+   - **Penggunaan:** Panel ini penting untuk memantau performa *query*. Jika latensi terlalu tinggi, hal ini bisa menandakan masalah performa di sisi server, seperti masalah dalam optimasi *query*, beban server, atau keterbatasan sumber daya.
+
+  #### 3. **Total Mutations**
+   - **Deskripsi:** Panel ini menunjukkan jumlah total operasi *mutation* GraphQL yang dilakukan.
+   - **Nilai yang Ditampilkan:** Pada gambar, hanya ada 1 *mutation* yang tercatat.
+   - **Penggunaan:** Administrator dapat memantau seberapa sering operasi *mutation* digunakan dalam aplikasi. Seperti *query*, data ini berguna untuk memahami pola penggunaan dan mendeteksi aktivitas yang mencurigakan.
+
 ## 2. Hasura Health Dashboard - Panel
 Dokumentasi ini memberikan penjelasan detail untuk setiap panel di dashboard Hasura Health yang ditampilkan di Grafana. Setiap panel memantau metrik kesehatan tertentu yang terkait dengan Hasura GraphQL Engine, memungkinkan administrator mengukur status dan kinerja sistem.
 
@@ -33,11 +43,6 @@ Pada dashboard ini terdapat 7 panels.
      - `CONSISTENT` (hijau): Metadata konsisten dan tersinkronisasi di seluruh sistem Hasura.
      - `INCONSISTENT` (merah atau lainnya): Metadata memiliki perbedaan atau tidak sepenuhnya tersinkronisasi.
    - **Penggunaan:** Administrator harus memastikan bahwa metadata selalu `CONSISTENT`. Ketidakkonsistenan mungkin menunjukkan masalah dengan skema atau sinkronisasi sistem.
-
-  #### 2. **Query Latency (P95)**
-   - **Deskripsi:** Panel ini menampilkan latensi (dalam milidetik) dari *query* GraphQL. Latensi P95 berarti 95% dari permintaan memiliki latensi yang sama atau lebih rendah dari angka ini.
-   - **Nilai yang Ditampilkan:** Dalam gambar, nilai P95 dari latensi *query* adalah 27.0 ms.
-   - **Penggunaan:** Panel ini penting untuk memantau performa *query*. Jika latensi terlalu tinggi, hal ini bisa menandakan masalah performa di sisi server, seperti masalah dalam optimasi *query*, beban server, atau keterbatasan sumber daya.
 
   ### 2. **Health Check Menggunakan Infinity**
    - **Deskripsi:** Panel ini menampilkan status pemeriksaan kesehatan koneksi Hasura ke datasource Infinity.
