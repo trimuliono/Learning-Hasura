@@ -72,6 +72,21 @@ Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagi
    - **Cara Analisis**: Jika mutation tidak aktif, periksa apakah aplikasi mengirimkan mutation sesuai harapan atau ada kesalahan pada bagian aplikasi.
   ![image](https://github.com/user-attachments/assets/e97d1a4d-037e-429d-b5e9-496cc32c5aff)
 
+  #### 3. Query Error Rate
+   - **Deskripsi**: Panel ini menampilkan persentase error yang terjadi pada permintaan query GraphQL.
+   - **Nilai yang Ditampilkan**: Query Error Rate berada di angka 0, yang menunjukkan tidak ada kesalahan yang terjadi selama periode waktu tersebut.
+   - **Penggunaan**: Panel ini penting untuk memantau kesalahan atau *error* dalam operasi query. Kesalahan yang meningkat bisa menjadi tanda adanya masalah performa server atau kesalahan di tingkat aplikasi.
+   - **Cara Analisis**: Jika tingkat kesalahan tiba-tiba meningkat, segera selidiki penyebabnya, seperti konfigurasi yang salah atau query yang terlalu berat.
+  ![image](https://github.com/user-attachments/assets/cc197704-f1a2-4447-9348-9face5c4eb48)
+
+
+  #### 4. Mutation Error Rate
+   - **Deskripsi**: Panel ini menampilkan persentase error yang terjadi pada permintaan mutation GraphQL.
+   - **Nilai yang Ditampilkan**: Tidak ada data yang ditampilkan (No Data).
+   - **Penggunaan**: Ini berguna untuk mendeteksi apakah mutation yang dijalankan mengalami kesalahan. Kesalahan yang tinggi bisa menjadi indikator masalah pada sisi server atau basis data.
+   - **Cara Analisis**: Jika ada kesalahan, segera lakukan debugging pada operasi mutation.
+  ![image](https://github.com/user-attachments/assets/05ec043a-81ae-4ad5-bf13-2347aac193c8)
+
 
 ## 2. Hasura Health Dashboard - Panel
 Dokumentasi ini memberikan penjelasan detail untuk setiap panel di dashboard Hasura Health yang ditampilkan di Grafana. Setiap panel memantau metrik kesehatan tertentu yang terkait dengan Hasura GraphQL Engine, memungkinkan administrator mengukur status dan kinerja sistem.
