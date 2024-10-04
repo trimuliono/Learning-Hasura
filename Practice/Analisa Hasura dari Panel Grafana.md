@@ -63,7 +63,15 @@ Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagi
    - **Penggunaan**: Panel ini membantu administrator memantau seberapa banyak permintaan yang diterima oleh server. Jika terjadi penurunan signifikan atau lonjakan mendadak, administrator dapat memeriksa apakah terjadi anomali atau apakah server sedang overload.
    - **Cara Analisis**: 
      - Pastikan bahwa tingkat request stabil. Jika ada lonjakan tajam dalam request, ini bisa menandakan masalah performa di aplikasi yang menggunakan Hasura.
-   
+  ![image](https://github.com/user-attachments/assets/052c26af-e95b-464f-a2cf-ab75d3a7ac4b)
+
+  #### 2. Mutation Request Rate
+   - **Deskripsi**: Panel ini menunjukkan jumlah *request* mutation GraphQL yang diterima oleh server dalam waktu yang sama.
+   - **Nilai yang Ditampilkan**: Tidak ada data yang ditampilkan (No Data).
+   - **Penggunaan**: Memantau berapa banyak permintaan mutation diterima oleh server Hasura.
+   - **Cara Analisis**: Jika mutation tidak aktif, periksa apakah aplikasi mengirimkan mutation sesuai harapan atau ada kesalahan pada bagian aplikasi.
+  ![image](https://github.com/user-attachments/assets/e97d1a4d-037e-429d-b5e9-496cc32c5aff)
+
 
 ## 2. Hasura Health Dashboard - Panel
 Dokumentasi ini memberikan penjelasan detail untuk setiap panel di dashboard Hasura Health yang ditampilkan di Grafana. Setiap panel memantau metrik kesehatan tertentu yang terkait dengan Hasura GraphQL Engine, memungkinkan administrator mengukur status dan kinerja sistem.
