@@ -14,3 +14,9 @@ Pada dashboard pertama ini terdapat 3 group panel yaitu:
   
 ![image](https://github.com/user-attachments/assets/48ddef2d-a6de-4fd4-9845-b580ac987b2c)
 
+## 2. Hasura Health
+Pada dashboard ini terdapat 7 panels.
+
+![image](https://github.com/user-attachments/assets/5dc98be0-11fc-4e24-812d-46accf6ecc86)
+
+
