@@ -60,11 +60,11 @@ Pada dashboard ini terdapat 7 panels.
    - **Penggunaan:** Latensi pemeriksaan kesehatan penting untuk memahami seberapa lama waktu yang dibutuhkan Hasura untuk memverifikasi kesehatan layanannya. Latensi yang lebih tinggi mungkin menunjukkan masalah kinerja.
 
 ### 7. **Postgres Connections**
-   - **Deskripsi:** Memantau jumlah koneksi aktif ke database Postgres dari Hasura.
-   - **Nilai yang Mungkin:**
-     - Jumlah koneksi (nilai tinggi menunjukkan beban tinggi).
-     - `No data`: Tidak ada data yang tersedia untuk metrik ini, yang mungkin menunjukkan kurangnya pengaturan pemantauan.
-   - **Penggunaan:** Penting untuk melacak jumlah koneksi Postgres untuk memastikan bahwa Hasura tidak membebani database atau mencapai batas koneksi. Lonjakan yang tidak biasa harus diselidiki.
+   - **Deskripsi:** Panel ini menampilkan jumlah koneksi aktif ke database Postgres dari Hasura, yang dipantau berdasarkan instance yang digunakan (seperti `testsejuta` dan `default`).
+   - **Nilai yang Ditampilkan:** Garis tren yang menunjukkan jumlah koneksi Postgres dari instance tertentu dalam waktu tertentu. Pada gambar, terdapat dua instance, yaitu:
+     - **testsejuta (hijau):** Menunjukkan adanya aktivitas koneksi ke Postgres pada sekitar pukul 10:40, yang mencapai 1 koneksi dan kemudian turun kembali.
+     - **default (kuning):** Menunjukkan tidak ada koneksi yang terdeteksi dalam periode waktu yang sama.
+   - **Penggunaan:** Panel ini membantu administrator untuk memantau apakah ada lonjakan atau penurunan jumlah koneksi ke Postgres. Jika jumlah koneksi terlalu tinggi atau fluktuasi yang tidak biasa terdeteksi, bisa menandakan adanya masalah performa atau penggunaan sumber daya yang perlu dianalisis lebih lanjut.
 
 
 ![image](https://github.com/user-attachments/assets/5dc98be0-11fc-4e24-812d-46accf6ecc86)
