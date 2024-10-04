@@ -87,6 +87,20 @@ Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagi
    - **Cara Analisis**: Jika ada kesalahan, segera lakukan debugging pada operasi mutation.
   ![image](https://github.com/user-attachments/assets/05ec043a-81ae-4ad5-bf13-2347aac193c8)
 
+  #### 5. Query Latency (P95)
+   - **Deskripsi**: Panel ini menampilkan latensi (waktu tunda) dari 95% permintaan query yang berhasil dijalankan.
+   - **Nilai yang Ditampilkan**: Untuk Query Latency, latensi rata-rata berada di sekitar 30 ms dan turun hingga 0 ms pada akhir periode waktu yang dipantau.
+   - **Penggunaan**: Latensi rendah menunjukkan performa yang baik. Jika latensi meningkat, hal ini bisa menunjukkan adanya beban server atau masalah dalam query yang digunakan.
+   - **Cara Analisis**: Pantau jika ada peningkatan tiba-tiba dalam latensi dan lakukan investigasi.
+
+  #### 6. Mutation Latency (P95)
+   - **Deskripsi**: Panel ini menampilkan latensi dari 95% permintaan mutation yang diproses.
+   - **Nilai yang Ditampilkan**: Tidak ada data yang ditampilkan (No Data), yang berarti tidak ada operasi mutation yang terpantau selama waktu tersebut.
+   - **Penggunaan**: Latensi yang rendah memastikan bahwa mutation berjalan dengan efisien. Jika latensi tinggi, bisa jadi server kelebihan beban atau ada masalah dalam operasi mutation.
+   - **Cara Analisis**: Periksa apakah mutation dijalankan sesuai ekspektasi dan jika tidak ada data, selidiki apakah ada kesalahan pada bagian aplikasi.
+
+  ![image](https://github.com/user-attachments/assets/1b4ae8f8-9c9e-49fd-a9d9-45f53f89d12f)
+
 
 ## 2. Hasura Health Dashboard - Panel
 Dokumentasi ini memberikan penjelasan detail untuk setiap panel di dashboard Hasura Health yang ditampilkan di Grafana. Setiap panel memantau metrik kesehatan tertentu yang terkait dengan Hasura GraphQL Engine, memungkinkan administrator mengukur status dan kinerja sistem.
