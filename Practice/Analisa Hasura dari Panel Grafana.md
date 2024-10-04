@@ -101,6 +101,43 @@ Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagi
 
   ![image](https://github.com/user-attachments/assets/1b4ae8f8-9c9e-49fd-a9d9-45f53f89d12f)
 
+### `1.3 Panel General Metrics` - Dashboard Hasura HTTP GraphQL
+Dokumentasi ini menjelaskan setiap panel yang terlihat dalam bagian *General Metrics* pada dashboard Grafana untuk Hasura HTTP GraphQL. Setiap panel menyediakan wawasan mengenai penggunaan koneksi HTTP, transfer data, dan metrik cache.
+
+  #### 1. HTTP Connections
+   - **Deskripsi**: Panel ini menunjukkan jumlah koneksi HTTP yang aktif di server dalam rentang waktu tertentu.
+   - **Nilai yang Ditampilkan**: Dalam gambar, jumlah koneksi berada di angka 0 untuk sebagian besar waktu.
+   - **Penggunaan**: Panel ini membantu administrator memahami jumlah koneksi yang dibuka dan dipertahankan oleh server.
+   - **Cara Analisis**: 
+     - Periksa apakah koneksi HTTP berjalan sesuai ekspektasi.
+     - Jika jumlah koneksi rendah atau tidak ada, periksa apakah ada masalah pada aplikasi klien yang terhubung ke Hasura.
+
+  #### 2. Cache Request Rate
+   - **Deskripsi**: Panel ini menampilkan tingkat permintaan cache yang diakses oleh server Hasura.
+   - **Nilai yang Ditampilkan**: Tidak ada data yang ditampilkan (No Data).
+   - **Penggunaan**: Digunakan untuk memantau penggunaan dan pengaksesan cache.
+   - **Cara Analisis**: 
+     - Jika cache request tidak aktif atau ada penurunan tajam, evaluasi apakah caching sudah diaktifkan dengan benar.
+     - Analisis lebih lanjut perlu dilakukan jika data cache tidak tersedia.
+
+  #### 3. HTTP Data Transfer
+   - **Deskripsi**: Panel ini menunjukkan jumlah data yang ditransfer melalui HTTP di server dalam byte.
+   - **Nilai yang Ditampilkan**: Pada gambar, terlihat bahwa jumlah transfer data berada di angka yang bervariasi, sekitar 128B hingga 384B pada beberapa titik.
+   - **Penggunaan**: Digunakan untuk memantau volume data yang ditransfer melalui koneksi HTTP.
+   - **Cara Analisis**: 
+     - Periksa apakah volume data yang ditransfer sesuai dengan ekspektasi.
+     - Jika ada lonjakan yang tidak biasa, selidiki apakah server sedang menangani permintaan yang besar.
+
+  #### 4. Action Data Transfer
+   - **Deskripsi**: Panel ini menampilkan jumlah data yang ditransfer melalui tindakan (actions) yang dijalankan oleh Hasura.
+   - **Nilai yang Ditampilkan**: Data yang ditransfer berkisar antara 16B hingga 96B, menunjukkan bahwa tindakan dilakukan pada beberapa titik waktu.
+   - **Penggunaan**: Memantau data yang dikirimkan sebagai respons terhadap actions di Hasura.
+   - **Cara Analisis**: 
+     - Periksa apakah volume data action sesuai dengan yang diharapkan.
+     - Jika action data tidak ada, pastikan bahwa tindakan yang seharusnya dilakukan oleh aplikasi terintegrasi.
+
+![image](https://github.com/user-attachments/assets/31bc851a-6a19-4787-8bbb-3184d8081420)
+
 
 ## 2. Hasura Health Dashboard - Panel
 Dokumentasi ini memberikan penjelasan detail untuk setiap panel di dashboard Hasura Health yang ditampilkan di Grafana. Setiap panel memantau metrik kesehatan tertentu yang terkait dengan Hasura GraphQL Engine, memungkinkan administrator mengukur status dan kinerja sistem.
