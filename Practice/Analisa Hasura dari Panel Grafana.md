@@ -14,8 +14,13 @@ Pada dashboard pertama ini terdapat 3 group panel yaitu:
   
 ![image](https://github.com/user-attachments/assets/48ddef2d-a6de-4fd4-9845-b580ac987b2c)
 
-### `Panel Overview` - Dashboard Hasura HTTP GraphQL
+### 1.1 `Panel Overview` - Dashboard Hasura HTTP GraphQL
 Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagian *Overview* dari *Hasura HTTP GraphQL Dashboard* di Grafana. Setiap panel memberikan wawasan mengenai kinerja query dan mutasi GraphQL yang terjadi dalam Hasura.
+
+  #### 1. **Total Queries**
+   - **Deskripsi:** Panel ini menunjukkan jumlah total *query* GraphQL yang dijalankan dalam periode waktu yang dipantau.
+   - **Nilai yang Ditampilkan:** Dalam gambar, terdapat 12 *query* yang tercatat.
+   - **Penggunaan:** Panel ini membantu melacak seberapa sering *query* GraphQL digunakan dalam aplikasi. Administrator bisa menggunakan data ini untuk memahami pola penggunaan dan mendeteksi lonjakan yang tidak wajar.
 
 ## 2. Hasura Health Dashboard - Panel
 Dokumentasi ini memberikan penjelasan detail untuk setiap panel di dashboard Hasura Health yang ditampilkan di Grafana. Setiap panel memantau metrik kesehatan tertentu yang terkait dengan Hasura GraphQL Engine, memungkinkan administrator mengukur status dan kinerja sistem.
