@@ -54,6 +54,17 @@ Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagi
 
 ![image](https://github.com/user-attachments/assets/9a6df46d-3334-4dbc-b196-96fa71a3edd0)
 
+### `1.2 Panel GraphQL Metrics` - Dashboard Hasura HTTP GraphQL
+Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagian *GraphQL Metrics* dari *Hasura HTTP GraphQL Dashboard* di Grafana. Setiap panel menyediakan metrik penting terkait performa query dan mutation di Hasura.
+
+  #### 1. Query Request Rate
+   - **Deskripsi**: Panel ini menunjukkan jumlah *request* query GraphQL yang diterima oleh server dalam rentang waktu tertentu.
+   - **Nilai yang Ditampilkan**: Dalam gambar, terlihat bahwa Query Request Rate berada di angka 0 sepanjang waktu, yang menunjukkan tidak ada permintaan query yang masuk pada waktu tersebut.
+   - **Penggunaan**: Panel ini membantu administrator memantau seberapa banyak permintaan yang diterima oleh server. Jika terjadi penurunan signifikan atau lonjakan mendadak, administrator dapat memeriksa apakah terjadi anomali atau apakah server sedang overload.
+   - **Cara Analisis**: 
+     - Pastikan bahwa tingkat request stabil. Jika ada lonjakan tajam dalam request, ini bisa menandakan masalah performa di aplikasi yang menggunakan Hasura.
+   
+
 ## 2. Hasura Health Dashboard - Panel
 Dokumentasi ini memberikan penjelasan detail untuk setiap panel di dashboard Hasura Health yang ditampilkan di Grafana. Setiap panel memantau metrik kesehatan tertentu yang terkait dengan Hasura GraphQL Engine, memungkinkan administrator mengukur status dan kinerja sistem.
 
