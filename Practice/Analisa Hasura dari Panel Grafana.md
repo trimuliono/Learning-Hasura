@@ -6,7 +6,7 @@ Pada tugas latihan kali ini kita diminta untuk menganalisa tiap panel grafana ya
 - Hasura HTTP GraphQL
 - Hasura Health
 
-## 1. Hasura HTTP GraphQL
+## 1. Hasura HTTP GraphQL Dashboard - Panel
 Pada dashboard pertama ini terdapat 3 group panel yaitu:
 - `Overview`, didalamnya terdapat 7 panels
 - `GraphQL Metrics`, didalamnya terdapat 6 panels. dan
