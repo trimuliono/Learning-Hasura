@@ -32,6 +32,14 @@ Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagi
    - **Nilai yang Ditampilkan:** Pada gambar, hanya ada 1 *mutation* yang tercatat.
    - **Penggunaan:** Administrator dapat memantau seberapa sering operasi *mutation* digunakan dalam aplikasi. Seperti *query*, data ini berguna untuk memahami pola penggunaan dan mendeteksi aktivitas yang mencurigakan.
 
+  #### 4. **Mutation Latency (P95)**
+   - **Deskripsi:** Panel ini menampilkan latensi operasi *mutation*. Seperti *query*, P95 mengacu pada 95% dari operasi memiliki latensi yang sama atau lebih rendah.
+   - **Nilai yang Ditampilkan:** Pada gambar, nilai P95 dari latensi *mutation* adalah 9.50 ms.
+   - **Penggunaan:** Latensi *mutation* penting karena operasi *mutation* mengubah data. Jika latensi terlalu tinggi, ini bisa mempengaruhi pengalaman pengguna dan efisiensi aplikasi. Sama seperti pada *query*, masalah performa perlu diidentifikasi.
+
+
+![image](https://github.com/user-attachments/assets/9a6df46d-3334-4dbc-b196-96fa71a3edd0)
+
 ## 2. Hasura Health Dashboard - Panel
 Dokumentasi ini memberikan penjelasan detail untuk setiap panel di dashboard Hasura Health yang ditampilkan di Grafana. Setiap panel memantau metrik kesehatan tertentu yang terkait dengan Hasura GraphQL Engine, memungkinkan administrator mengukur status dan kinerja sistem.
 
