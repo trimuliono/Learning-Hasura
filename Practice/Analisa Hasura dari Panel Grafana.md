@@ -42,6 +42,16 @@ Dokumentasi ini memberikan penjelasan untuk setiap panel yang terlihat pada bagi
    - **Nilai yang Ditampilkan:** Dalam gambar, tidak ada data yang ditampilkan.
    - **Penggunaan:** Panel ini bermanfaat untuk mengidentifikasi *query* yang sering digunakan dan memerlukan optimasi lebih lanjut untuk meningkatkan performa aplikasi.
 
+  #### 6. **Top Mutations**
+   - **Deskripsi:** Panel ini biasanya menampilkan *mutation* yang paling sering digunakan.
+   - **Nilai yang Ditampilkan:** Pada gambar, tidak ada data yang terlihat.
+   - **Penggunaan:** Panel ini memberikan wawasan tentang operasi *mutation* yang sering digunakan. Jika operasi tertentu sering digunakan, penting untuk memastikan bahwa operasi tersebut optimal dalam hal performa.
+
+  #### 7. **Top Error Rate**
+   - **Deskripsi:** Panel ini menunjukkan tingkat kesalahan (*error rate*) dari operasi *query* atau *mutation* yang dilakukan.
+   - **Nilai yang Ditampilkan:** Tidak ada data yang ditampilkan pada gambar.
+   - **Penggunaan:** Panel ini penting untuk memantau stabilitas sistem. Jika terjadi lonjakan kesalahan, administrator perlu segera melakukan investigasi untuk mencegah masalah lebih lanjut dalam aplikasi.
+
 ![image](https://github.com/user-attachments/assets/9a6df46d-3334-4dbc-b196-96fa71a3edd0)
 
 ## 2. Hasura Health Dashboard - Panel
