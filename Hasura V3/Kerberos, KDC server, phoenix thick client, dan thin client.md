@@ -39,3 +39,20 @@ KDC (Key Distribution Center) adalah komponen utama dalam sistem Kerberos yang b
 - Titik kegagalan tunggal (Single Point of Failure).
 - Memerlukan sinkronisasi waktu yang ketat antara server dan client.
 
+---
+## 2. Perbedaan Phoenix Thick Client dan Thin Client
+
+### **Apa itu Thick Client?**
+Thick client adalah aplikasi yang berjalan pada komputer pengguna dan memiliki banyak logika pemrosesan di sisi client. Contoh: aplikasi desktop.
+
+#### **Kelebihan Thick Client:**
+- **Performa lebih baik**: Pemrosesan dilakukan di perangkat lokal.
+- **Respon cepat**: Karena sebagian besar logika ada di sisi client.
+- **Offline Mode**: Dapat bekerja tanpa koneksi internet dalam beberapa kasus.
+
+#### **Kekurangan Thick Client:**
+- **Kompleksitas Deployment**: Perlu diinstal di setiap perangkat pengguna.
+- **Pemeliharaan yang rumit**: Perubahan kode harus diupdate secara manual di setiap client.
+- **Keamanan lebih rendah**: Data sensitif mungkin lebih rentan di perangkat lokal.
+
+
