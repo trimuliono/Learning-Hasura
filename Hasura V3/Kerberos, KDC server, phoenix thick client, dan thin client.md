@@ -25,3 +25,17 @@ Kerberos adalah protokol autentikasi jaringan yang dirancang untuk menyediakan a
 5. **Client Accesses the Service:**
    - Client menggunakan service ticket untuk mengakses layanan.
    - Server memverifikasi service ticket tanpa meminta kata sandi tambahan.
+  
+### **Apa itu KDC Server?**
+KDC (Key Distribution Center) adalah komponen utama dalam sistem Kerberos yang bertanggung jawab untuk:
+   - Mengautentikasi pengguna melalui Authentication Server (AS).
+   - Mengeluarkan tiket layanan melalui Ticket-Granting Server (TGS).
+
+**Kelebihan KDC:**
+- Sentralisasi autentikasi.
+- Meningkatkan keamanan karena kata sandi tidak pernah dikirim di jaringan.
+
+**Kekurangan KDC:**
+- Titik kegagalan tunggal (Single Point of Failure).
+- Memerlukan sinkronisasi waktu yang ketat antara server dan client.
+
