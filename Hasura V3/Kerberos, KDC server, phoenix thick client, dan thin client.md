@@ -55,4 +55,18 @@ Thick client adalah aplikasi yang berjalan pada komputer pengguna dan memiliki b
 - **Pemeliharaan yang rumit**: Perubahan kode harus diupdate secara manual di setiap client.
 - **Keamanan lebih rendah**: Data sensitif mungkin lebih rentan di perangkat lokal.
 
+---
+
+### **Apa itu Thin Client?**
+Thin client adalah aplikasi yang sebagian besar logikanya berjalan di server, sementara client hanya digunakan untuk interaksi pengguna. Contoh: aplikasi berbasis web.
+
+#### **Kelebihan Thin Client:**
+- **Kemudahan Deployment**: Tidak memerlukan instalasi lokal, hanya membutuhkan browser atau koneksi ke server.
+- **Pemeliharaan lebih mudah**: Update dilakukan di sisi server dan langsung berlaku untuk semua pengguna.
+- **Keamanan lebih tinggi**: Data tetap disimpan di server.
+
+#### **Kekurangan Thin Client:**
+- **Ketergantungan pada jaringan**: Membutuhkan koneksi internet atau intranet yang stabil.
+- **Respon lebih lambat**: Karena pemrosesan dilakukan di server.
+- **Kapasitas server yang besar**: Beban server meningkat saat jumlah pengguna bertambah.
 
