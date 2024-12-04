@@ -3,7 +3,7 @@
 
 ## Deployment Hasura V2 di Kubernetes  
 
-Langkah-langkah deployment Hsura V2 telah didokumentasikan pada BAB sebelumnya. Dokumentasi dapat dilihat [disini](https://github.com/Learning-Hasura/new/main/Practice/Des).
+Langkah-langkah deployment Hsura V2 telah didokumentasikan pada BAB sebelumnya. Dokumentasi dapat dilihat [disini](https://github.com/trimuliono/Learning-Hasura/blob/main/Practice/Des/Panduan%20Koneksi%20VPN%2C%20Akses%20Rancher%2C%20dan%20Deployment%20Hasura.md).
 
 ---
 
