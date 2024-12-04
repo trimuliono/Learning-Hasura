@@ -1,6 +1,3 @@
-Berikut adalah file `.md` yang telah diperbarui dengan gaya bahasa yang lebih rinci dan detail penjelasan yang lebih jelas:
-
-```markdown
 # Setup Hasura V2 di Kubernetes dengan Integrasi OpenTelemetry
 
 ## 1. Deployment Hasura V2 di Kubernetes
