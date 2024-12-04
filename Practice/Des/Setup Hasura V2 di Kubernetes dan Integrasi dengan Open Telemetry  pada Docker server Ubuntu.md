@@ -1,272 +1,252 @@
+Berikut adalah file `.md` yang telah diperbarui dengan gaya bahasa yang lebih rinci dan detail penjelasan yang lebih jelas:
 
+```markdown
 # Setup Hasura V2 di Kubernetes dengan Integrasi OpenTelemetry
 
-## Deployment Hasura V2 di Kubernetes  
+## 1. Deployment Hasura V2 di Kubernetes
 
-Langkah-langkah deployment Hsura V2 telah didokumentasikan pada BAB sebelumnya. Dokumentasi dapat dilihat [disini](https://github.com/trimuliono/Learning-Hasura/blob/main/Practice/Des/Panduan%20Koneksi%20VPN%2C%20Akses%20Rancher%2C%20dan%20Deployment%20Hasura.md).
-
----
-
-## Install OpenTelemetry Collector  
-
-### Akses Server
-
-Kita akan menginstall **OpenTelemetry** pada server yang berbeda dengan server Hasura yang berjalan. Terlebih dahulu Login ke server yang akan dipakai menggunakan Windows Powershell atau Command Prompt.
-
-### Install Docker
-
-Kita akan menginstall **OpenTelemetry** menggunakan **Docker**. Pastikan **Docker** telah terinstall pada server yang akan digunakan untuk menginstall **OpenTelemetry**. Jika belum, berikut langkah-langkah untuk menginstall **Docker**.
-
-#### Prasyarat
-Pastikan Anda menggunakan sistem operasi Ubuntu atau turunannya. Panduan ini juga berlaku untuk distribusi seperti Linux Mint, tetapi Anda mungkin perlu menggunakan `UBUNTU_CODENAME` alih-alih `VERSION_CODENAME`.
+Langkah-langkah untuk melakukan **deployment Hasura V2 di Kubernetes** telah dijelaskan secara lengkap pada [panduan ini](https://github.com/trimuliono/Learning-Hasura/blob/main/Practice/Des/Panduan%20Koneksi%20VPN%2C%20Akses%20Rancher%2C%20dan%20Deployment%20Hasura.md).
 
 ---
 
-#### Langkah-Langkah Instalasi Docker Engine
+## 2. Install OpenTelemetry Collector
 
-##### 1. Tambahkan Repository Apt Docker
+### A. Akses Server
 
-1. **Perbarui Daftar Paket dan Instal Dependensi:**
+Sebelum kita mulai, pastikan bahwa kita menginstall **OpenTelemetry** pada server yang terpisah dari server Hasura. Anda akan mengakses server tersebut menggunakan **Windows Powershell** atau **Command Prompt**.
+
+### B. Install Docker
+
+Untuk menginstall **OpenTelemetry**, kita akan menggunakan **Docker**. Pastikan bahwa **Docker** sudah terinstall di server yang akan digunakan. Jika Docker belum terpasang, ikuti langkah-langkah berikut untuk menginstalnya.
+
+#### 1. Prasyarat
+
+Pastikan server yang digunakan menjalankan **Ubuntu** atau distribusi Linux turunannya. Panduan ini juga berlaku untuk distribusi seperti Linux Mint, namun Anda mungkin perlu menggunakan `UBUNTU_CODENAME` alih-alih `VERSION_CODENAME` ketika menambahkan repository Docker ke sumber Apt.
+
+#### 2. Langkah-Langkah Instalasi Docker Engine
+
+##### a. Tambahkan Repository Apt Docker
+
+1. **Perbarui Daftar Paket dan Instal Dependensi**:
+   Jalankan perintah berikut untuk memperbarui daftar paket dan menginstal dependensi yang diperlukan:
    ```bash
    sudo apt-get update
    sudo apt-get install ca-certificates curl
    ```
 
-2. **Tambahkan GPG Key Resmi Docker:**
+2. **Tambahkan GPG Key Resmi Docker**:
+   Tambahkan kunci GPG Docker untuk memastikan bahwa paket yang diunduh berasal dari sumber yang sah:
    ```bash
    sudo install -m 0755 -d /etc/apt/keyrings
    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
    sudo chmod a+r /etc/apt/keyrings/docker.asc
    ```
 
-3. **Tambahkan Repository Docker ke Sumber Apt:**
+3. **Tambahkan Repository Docker ke Sumber Apt**:
+   Jalankan perintah ini untuk menambahkan repository Docker ke daftar sumber apt:
    ```bash
-   echo      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
    ```
 
-4. **Perbarui Kembali Daftar Paket:**
+4. **Perbarui Daftar Paket**:
+   Perbarui kembali daftar paket agar repository Docker yang baru dapat digunakan:
    ```bash
    sudo apt-get update
    ```
 
-##### 2. Instal Paket Docker
+##### b. Instal Paket Docker
 
-1. **Instal Versi Terbaru Docker Engine:**
+1. **Instal Docker Engine**:
+   Jalankan perintah berikut untuk menginstal Docker Engine dan komponen terkait:
    ```bash
    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 
-2. **Verifikasi Instalasi dengan Menjalankan Container `hello-world`:**
+2. **Verifikasi Instalasi Docker**:
+   Untuk memastikan Docker telah terinstal dengan benar, jalankan perintah berikut untuk menjalankan container uji coba `hello-world`:
    ```bash
    sudo docker run hello-world
    ```
 
-   Perintah ini akan mengunduh image uji coba, menjalankannya di container, dan mencetak pesan konfirmasi jika berhasil.
+Jika perintah ini berhasil, Anda akan melihat pesan konfirmasi bahwa Docker telah berhasil terinstal dan berjalan dengan baik.
 
 ---
 
-##### Catatan Tambahan
-- Jika Anda menggunakan distribusi turunan Ubuntu seperti Linux Mint, pastikan Anda menggunakan `UBUNTU_CODENAME` alih-alih `VERSION_CODENAME` saat menambahkan repository Docker ke sumber Apt.
+### C. Verifikasi Instalasi Docker
+
+Jika instalasi berhasil, Anda akan melihat output yang menunjukkan bahwa Docker Engine telah terinstal dengan benar dan siap digunakan. Jika Anda belum melihat pesan tersebut, pastikan Anda mengikuti setiap langkah dengan benar.
+
+Baca referensi lengkapnya di: [Docker Installation on Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
 
 ---
 
-##$$$ Verifikasi
-Jika instalasi berhasil, Anda akan melihat pesan dari container `hello-world` yang menyatakan bahwa Docker Engine telah terinstal dan berjalan dengan baik.
+## 3. Install OpenTelemetry Collector
 
----
-  
-Baca referensi selengkapnya [disini](https://docs.docker.com/engine/install/ubuntu/).
+Setelah Docker terpasang, kita akan menginstal **OpenTelemetry Collector** (OTEL) untuk memonitor dan mengekspor data telemetri.
 
-### Install OpenTelemetry
+### A. Persiapan Folder dan File Konfigurasi
 
-1. **Buat folder OTEL**
+1. **Buat Folder untuk OpenTelemetry**  
+   Buat folder bernama **OTEL** di server untuk menyimpan konfigurasi OpenTelemetry:
+   ```bash
+   mkdir OTEL
+   ```
 
-Kita akan menginstall **OTEL** pada folder **OTEL**. Sehingga, terlebih dahulu kita membuat folder OTEL.
-  
-```
-mkdir OTEL
-```
+2. **Masuk ke Folder OTEL**  
+   Arahkan terminal Anda ke folder **OTEL**:
+   ```bash
+   cd OTEL
+   ```
 
-2. **Masuk ke dalam folder OTEL**
+3. **Buat File Konfigurasi OpenTelemetry**  
+   Buat file konfigurasi untuk OpenTelemetry Collector:
+   ```bash
+   touch otel-collector-config.yaml
+   ```
 
-```
-cd OTEL
-``` 
+4. **Edit File Konfigurasi**  
+   Gunakan editor teks (seperti `nano`) untuk mengedit file **otel-collector-config.yaml**:
+   ```bash
+   nano otel-collector-config.yaml
+   ```
 
-3. **Buat file otel-collector-config.yaml**
-  
-Kita akan membuat konfigurasi **OTEL** secara custom sehingga terlebih dahulu membuat file **otel-collector-config.yaml**
-  
-```
-touch otel-collector-config.yaml
-```
+   Kemudian masukkan konfigurasi berikut untuk OpenTelemetry Collector:
 
-4. **Kemudian kita edit file "otel-collector-config.yaml" untuk mengatur konfigurasi otel**
-  
-```
-nano otel-collector-config.yaml
-```
+   ```yaml
+   receivers:
+     otlp:
+       protocols:
+         grpc:
+           endpoint: 0.0.0.0:4317
+         http:
+           endpoint: 0.0.0.0:4318
 
-![image](https://github.com/user-attachments/assets/cfb30143-47b6-4984-8d5a-f0736b1193db)
+   processors:
+     batch:
 
+   exporters:
+     debug: {}
+     verbosity: detailed
 
-  
-Kemudian kita masukkan File Configurasi berikut ini :
-```
-receivers:
-  otlp:
-    protocols:
-      grpc:
-        endpoint: 0.0.0.0:4317
-      http:
-        endpoint: 0.0.0.0:4318
-processors:
-  batch:
+   extensions:
+     health_check:
+     pprof:
+       endpoint: 0.0.0.0:1777
+     zpages:
+       endpoint: 0.0.0.0:55679
 
-exporters:
-  debug: {}
-  verbosity: detailed
+   service:
+     pipelines:
+       traces:
+         receivers: [otlp]
+         processors: [batch]
+         exporters: [debug, otlp]
+       metrics:
+         receivers: [otlp]
+         processors: [batch]
+         exporters: [debug, otlp]
+       logs:
+         receivers: [otlp]
+         processors: [batch]
+         exporters: [debug, otlp]
+   ```
 
-extensions:
-  health_check:
-  pprof:
-    endpoint: 0.0.0.0:1777
-  zpages:
-    endpoint: 0.0.0.0:55679
+   Tekan `Ctrl + X` untuk keluar dan pilih "Yes" untuk menyimpan file.
 
-service:
-  pipelines:
-    traces:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [debug, otlp]
-    metrics:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [debug, otlp]
-    logs:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [debug, otlp]
-```
+### B. Verifikasi File Konfigurasi
 
-![image](https://github.com/user-attachments/assets/f4daddcc-67e0-4eab-bca8-5824398afec1)
-
-  
-5. **Kemudian Save and Exit.**
-
-Kita ketik `ctrl + x` untuk Exit. Kemudian kita pilih "yes" untuk Save.
-
-6. **Kemudian tampilkan daftar file pada folder OTEL**
-
-Cek daftar file secara detail dengan log level untuk melihat apakah config otel sudah dibuat dengan baik.
-   
-```
+Periksa apakah file konfigurasi **otel-collector-config.yaml** telah dibuat dengan benar:
+```bash
 ls -ll
 ```
 
-![image](https://github.com/user-attachments/assets/7460a383-d9dc-4d87-a088-36c383c69ae3)
+### C. Jalankan OpenTelemetry Collector
 
-  
-6. **Kemudian kita jalankan Command berikut**
+1. **Unduh Docker Image untuk OpenTelemetry Collector**  
+   Gunakan perintah berikut untuk mengunduh image OpenTelemetry Collector:
+   ```bash
+   docker pull otel/opentelemetry-collector-contrib:0.114.0
+   ```
 
-Jalankan command berikut menarik Docker Image dan menjalankan Kolektor dalam sebuah kontainer.
+2. **Jalankan OpenTelemetry Collector**  
+   Jalankan container dengan menggunakan konfigurasi yang telah dibuat:
+   ```bash
+   docker run -d -v $(pwd)/otel-collector-config.yaml:/root/OTEL/otel-collector-config.yaml otel/opentelemetry-collector-contrib:0.114.0
+   ```
 
+Baca dokumentasi lebih lanjut mengenai instalasi dan konfigurasi Collector di [OpenTelemetry Collector Installation](https://opentelemetry.io/docs/collector/installation/) dan [Collector Configuration](https://opentelemetry.io/docs/collector/configuration/).
+
+---
+
+## 4. Install OpenTelemetry Collector (otelcol)
+
+Jika Anda ingin menginstal OpenTelemetry Collector sebagai service di server, lakukan langkah-langkah berikut:
+
+1. **Cek apakah `otelcol` sudah terpasang**:
+   ```bash
+   which otelcol
+   ```
+
+   Jika perintah di atas tidak memberikan hasil, berarti **otelcol** belum terpasang.
+
+2. **Instal OpenTelemetry Collector**  
+   Jalankan perintah berikut untuk mengunduh dan menginstal **otelcol**:
+   ```bash
+   curl -sL https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.81.0/otelcol_0.81.0_linux_amd64.deb -o otelcol.deb
+   sudo dpkg -i otelcol.deb
+   ```
+
+3. **Buat file konfigurasi untuk `otelcol`**  
+   Buat file service untuk OpenTelemetry Collector agar bisa dijalankan sebagai service di systemd:
+   ```bash
+   sudo nano /etc/systemd/system/otelcol.service
+   ```
+
+   Masukkan konfigurasi berikut:
+   ```ini
+   [Unit]
+   Description=OpenTelemetry Collector
+   After=network.target
+
+   [Service]
+   Type=simple
+   ExecStart=/usr/local/bin/otelcol --config=/etc/otelcol-config.yaml
+   Restart=always
+   RestartSec=10
+   User=otel
+   Group=otel
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+
+4. **Lihat Log `otelcol`**  
+   Untuk memeriksa apakah **otelcol** berjalan dengan baik, gunakan perintah berikut untuk melihat log:
+   ```bash
+   journalctl -u otelcol -f
+   ```
+
+---
+
+## 5. Integrasi OpenTelemetry dengan Hasura pada Rancher
+
+1. **Buka Hasura di Rancher**  
+   Masuk ke antarmuka Rancher dan pilih proyek Hasura Anda.
+
+2. **Pilih Pengaturan**  
+   Klik pada **Settings** dan pilih opsi **OpenTelemetry Exporter**.
+
+   ![image](https://github.com/user-attachments/assets/8163f19c-0a65-41f0-8eaf-f1551906986d)
+
+3. **Masukkan Endpoint OpenTelemetry**  
+   Di
+
+ kolom konfigurasi **OpenTelemetry Exporter**, masukkan endpoint yang sesuai, dalam hal ini adalah port `4318` yang kita tentukan dalam file konfigurasi OTEL.
+
+   ![image](https://github.com/user-attachments/assets/f0becc6c-669f-46bb-b45a-2cee508e7b13)
+
+4. **Lakukan Pengujian**  
+   Setelah konfigurasi selesai, lakukan pengujian dengan menjalankan query Hasura yang dapat memicu telemetry, misalnya query terhadap tabel **todo**.
+
+   ![image](https://github.com/user-attachments/assets/47d8e418-403c-42a8-a1ad-e83a5bef489f)
 ```
-docker pull otel/opentelemetry-collector-contrib:0.114.0
-```
-
-Untuk memuat file konfigurasi khusus dari direktori kerja kita, pasang file tersebut sebagai volume dengan jalankan command berikut.
-   
-```
-docker run -d -v $(pwd)/otel-collector-config.yaml:/root/OTEL/otel-collector-config.yaml otel/opentelemetry-collector-contrib:0.114.0
-```
-
-Baca referensi selengkapnya disini:  
-[Install The collector](https://opentelemetry.io/docs/collector/installation/)   
-[Collector Configuration](https://opentelemetry.io/docs/collector/configuration/)  
-  
-7. **Install command "OpenTelemetry Collector" (otelcol)**
-  
-```
-which otelcol
-```
-  
-Jika balasan kosong maka tidak terdapat otelcol atau otelcol tidak terinstall. Selanjutnya, jalankan comman
-
-#### [1] maka kita jalankan Command berikut : <br/>
-
-```
-which otelcol
-```
-
-```
-curl -sL https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.81.0/otelcol_0.81.0_linux_amd64.deb -o otelcol.deb
-```
-
-```
-sudo dpkg -i otelcol.deb
-
-```
-
-```
-sudo nano /etc/systemd/system/otelcol.service
-```
-
-<br/> <br/>
-
-#### [2] Kita masukkan "File Configurasi" untuk otelcol "OpenTelemetry Collector" :
-
-```
-[Unit]
-Description=OpenTelemetry Collector
-After=network.target
-
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/otelcol --config=/etc/otelcol-config.yaml
-Restart=always
-RestartSec=10
-User=otel
-Group=otel
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-#### [3] Untuk melihat Log, kita jalankan Command berikut ini :
-```
-journalctl -u otelcol -f
-```
-
-#### [4] Sambungkan Server kita dengan Hasura pada Rancher :
-(Sambungkan Server yang ada di Powershell dengan Hasura pada Rancher ) :
-
-(1) Buka Hasura pada Rancher  <br/> <br/>
-
-(2) Pilih Setting : <br/>
-![image](https://github.com/user-attachments/assets/06b482a8-ae7b-4df4-bce6-eaa36a1250c7)     <br/>
-![image](https://github.com/user-attachments/assets/ee113a11-0b68-446c-b231-841b375ada26)
-
-<br/><br/>
-(2) Pilih "Open Telemetry Exporter" <br/>
-![image](https://github.com/user-attachments/assets/8163f19c-0a65-41f0-8eaf-f1551906986d)    <br/>
-![image](https://github.com/user-attachments/assets/3e9f610e-5ef8-4897-a27a-d871026d5798)    <br/><br/>
-
-(3) masukkan Endpoint pada Hasura di Rancher : <br/>
--> disini kita masukkan Endpoint "4318". <br/>
-yang mana "4318" merupakan Port http pada Configuration File <br/> <br/>
-
-![image](https://github.com/user-attachments/assets/f0becc6c-669f-46bb-b45a-2cee508e7b13)    <br/>
-![image](https://github.com/user-attachments/assets/cd1f9fca-5eec-4ea0-a92c-c5923c8cb870)      <br/>
-
-
-
-#### [5] Kemudian lakukan "Hit" dengan menjalankan Query di Hasura
-
-![image](https://github.com/user-attachments/assets/47d8e418-403c-42a8-a1ad-e83a5bef489f)
-
--> Query yang di-Hit tersebut mempunyai :
-- nama Tabel "todo"
-- dan salah satu Nama Kolom nya adalah "name" yang mempunyai nilai "ferdy"
