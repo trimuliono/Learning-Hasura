@@ -167,7 +167,7 @@ http://10.100.14.9:8991/
 Untuk menghubungkan Hasura ke MySQL, gunakan JDBC. Berikut adalah contoh URL untuk koneksi MySQL:
 
 ```bash
-jdbc:mysql://10.100.13.205:3306/Ihsan?user=Ihsan&password=Ihsan
+jdbc:mysql://10.100.13.205:3306/Tri?user=Tri&password=Tri
 ```
 
 Sesuaikan **IP address**, **port**, **database name**, **username**, dan **password** sesuai dengan konfigurasi kalian.  
