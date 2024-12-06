@@ -7,6 +7,7 @@ Untuk Melakukan analisa diatas, terlebih dahulu dilakukan konfigurasi antara Has
 ```KQL
 host.hostname :"hasura-tri-xxxx-xxxx:port"
 ```
+
 ### status
 ```KQL
 status :"miss" 
