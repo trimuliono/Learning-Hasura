@@ -112,4 +112,111 @@ host.name : "hasura-tri-74c8bbcb78-265mp:8080"  and operation_name : "TrigetUser
   }
 }
 ```
+### Metadata Utama
+- **`_index`**:  
+  Nilai ini menunjukkan indeks data stream di Elasticsearch.  
+  **Contoh**: `.ds-metrics-generic-default-2024.12.06-000001`  
+  - `metrics-generic`: Dataset yang digunakan.  
+  - `default`: Namespace default.  
+  - `2024.12.06`: Tanggal pembuatan indeks pertama.  
+
+- **`_id`**:  
+  ID unik dokumen yang di-generate oleh Elasticsearch.  
+  **Contoh**: `s66fqpMBPHAcfhWRWhsI`  
+
+- **`_version`**:  
+  Versi dokumen dalam Elasticsearch.  
+  **Contoh**: `1`  
+
+---
+
+### **@timestamp**  
+Waktu ketika data dikumpulkan dalam format ISO8601.  
+**Contoh**: `2024-12-09T08:48:15.864314850Z`  
+- Digunakan untuk analisis time series.
+
+---
+
+### **Data Stream**  
+Menjelaskan struktur data stream.  
+- **`dataset`**: Nama dataset.  
+  **Contoh**: `"generic"`  
+- **`namespace`**: Namespace yang digunakan.  
+  **Contoh**: `"default"`  
+- **`type`**: Jenis data stream (metrics, logs, dll).  
+  **Contoh**: `"metrics"`
+
+---
+
+### **hasura_graphql_requests_total**  
+Jumlah total permintaan GraphQL yang diterima.  
+**Contoh**: `2`  
+- Digunakan untuk mengukur tingkat aktivitas query GraphQL.
+
+---
+
+### **Host**  
+Informasi tentang host atau node yang menjalankan layanan.  
+- **`hostname`**: Nama lengkap host termasuk port.  
+  **Contoh**: `"hasura-tri-74c8bbcb78-265mp:8080"`  
+- **`name`**: Nama host sama seperti `hostname`.  
+  **Contoh**: `"hasura-tri-74c8bbcb78-265mp:8080"`
+
+---
+
+### **operation_name**  
+Nama operasi GraphQL yang dijalankan.  
+**Contoh**: `"TrigetUser"`  
+- Berguna untuk mengidentifikasi jenis query atau mutasi yang dipanggil.
+
+---
+
+### **operation_type**  
+Jenis operasi GraphQL: `query`, `mutation`, atau `subscription`.  
+**Contoh**: `"query"`  
+
+---
+
+### **parameterized_query_hash**  
+Hash dari query GraphQL untuk query parameterized.  
+**Contoh**: `"ee02ea2d91f16dbf0d6e094072abac4fcf487782"`  
+- Memungkinkan penyamaan query yang identik dalam bentuk hash.
+
+---
+
+### **response_status**  
+Status respons dari query Hasura.  
+**Contoh**: `"success"`  
+- Bisa memiliki nilai: `success`, `error`, atau `timeout`.
+
+---
+
+### **Service**  
+Informasi layanan yang menghasilkan data metrics.  
+- **`name`**: Nama layanan.  
+  **Contoh**: `"hasura"`
+
+---
+
+### **Fields**  
+Bagian ini mengulangi semua field dalam format array untuk keperluan indexing di Elasticsearch.  
+Contoh:  
+- **`operation_name`**: `["TrigetUser"]`  
+- **`response_status`**: `["success"]`  
+- **`host.hostname`**: `["hasura-tri-74c8bbcb78-265mp:8080"]`  
+- **`hasura_graphql_requests_total`**: `[2]`  
+
+Field ini berguna saat melakukan pencarian atau query kompleks di Kibana.
+
+---
+
+### **Kesimpulan**  
+Metrics ini memberikan wawasan penting terkait:  
+1. **Jumlah Query** (`hasura_graphql_requests_total`)  
+2. **Waktu Query** (`@timestamp`)  
+3. **Tipe Operasi** (`operation_type`)  
+4. **Nama Operasi** (`operation_name`)  
+5. **Status Respons** (`response_status`)  
+6. **Identitas Host** (`host.hostname`)  
+7. **Efisiensi Query** dengan Hash (`parameterized_query_hash`)  
 
