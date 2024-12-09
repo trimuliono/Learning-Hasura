@@ -8,7 +8,8 @@ Untuk mengakse GUI Elastic dilakukan dengan memasukkan `Username` dan `Password`
 Setelah berhasil masuk, klik `Burger bar` di pojok kiri atas, kemudian klik menu `Discover` untuk mengakses `Logs/metrics/traces`
 ![image](https://github.com/user-attachments/assets/3a122f1b-2bd5-4282-b5ed-746f2bcef246)
 
-
+Setelah berada pada menu `discover` klik dropdown di pojok kiri atas pada `data view` dan pilih `metrics` untuk melihat data metrics
+![image](https://github.com/user-attachments/assets/196143b7-d589-4d50-8a9a-3c795141f476)
 
 
 ## Melakukan filter search
