@@ -23,12 +23,93 @@ host.hostname :"hasura-tri-74c8bbcb78-265mp:8080"
 ```
 ![image](https://github.com/user-attachments/assets/10d326d6-0351-44c0-b7a6-d97634a68756)
 
-### status
+### host.hostname join operation.name join response_status
 ```KQL
-status :"miss" 
+host.name : "hasura-tri-74c8bbcb78-265mp:8080"  and response_status : "success" and operation_name : "TrigetUser" 
 ```
-### host.hostname join status
+![image](https://github.com/user-attachments/assets/a765c9b6-7865-49a8-9172-8f273ceffd9f)
+
+
+## Analisa Data Metrics
+Pertama kita lakukan query graphql agar data metrics baru dapat dibuat dan dilihat
+```graphql
+query TrigetUser{
+  Users {
+    id
+    username
+    email
+  }
+}
+```
+untuk memudahka pencarian langsung kita gunakan filter search join disertakan `operation.name`
 ```KQL
-host.hostname :"hasura-tri-xxxx-xxxx:port" and status :"miss" 
+host.name : "hasura-tri-74c8bbcb78-265mp:8080"  and operation_name : "TrigetUser"
+```
+![image](https://github.com/user-attachments/assets/3f7198d0-245e-4121-9a57-c5c6b0345cd7)
+
+```json
+{
+  "_index": ".ds-metrics-generic-default-2024.12.06-000001",
+  "_id": "s66fqpMBPHAcfhWRWhsI",
+  "_version": 1,
+  "_source": {
+    "@timestamp": "2024-12-09T08:48:15.864314850Z",
+    "data_stream": {
+      "dataset": "generic",
+      "namespace": "default",
+      "type": "metrics"
+    },
+    "hasura_graphql_requests_total": 2,
+    "host": {
+      "hostname": "hasura-tri-74c8bbcb78-265mp:8080",
+      "name": "hasura-tri-74c8bbcb78-265mp:8080"
+    },
+    "operation_name": "TrigetUser",
+    "operation_type": "query",
+    "parameterized_query_hash": "ee02ea2d91f16dbf0d6e094072abac4fcf487782",
+    "response_status": "success",
+    "service": {
+      "name": "hasura"
+    }
+  },
+  "fields": {
+    "operation_name": [
+      "TrigetUser"
+    ],
+    "parameterized_query_hash": [
+      "ee02ea2d91f16dbf0d6e094072abac4fcf487782"
+    ],
+    "@timestamp": [
+      "2024-12-09T08:48:15.864Z"
+    ],
+    "operation_type": [
+      "query"
+    ],
+    "response_status": [
+      "success"
+    ],
+    "service.name": [
+      "hasura"
+    ],
+    "data_stream.namespace": [
+      "default"
+    ],
+    "data_stream.dataset": [
+      "generic"
+    ],
+    "host.hostname": [
+      "hasura-tri-74c8bbcb78-265mp:8080"
+    ],
+    "host.name": [
+      "hasura-tri-74c8bbcb78-265mp:8080"
+    ],
+    "data_stream.type": [
+      "metrics"
+    ],
+    "hasura_graphql_requests_total": [
+      2
+    ]
+  }
+}
 ```
 
