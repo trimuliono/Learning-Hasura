@@ -13,6 +13,7 @@ Setelah berada pada menu `discover` klik dropdown di pojok kiri atas pada `data 
 
 
 ## Melakukan filter search
+*Kibana Query Language (KQL)*, yaitu bahasa kueri yang digunakan di Kibana untuk melakukan pencarian data dan memfilter hasil pada indeks di Elasticsearch. KQL memiliki fitur `auto complitation` sehingga user cukupmengetikkan beberapa kata kunci awal dan sistem akan menampilkan saran complitation nya.
 
 ### host.hostname
 ```KQL
