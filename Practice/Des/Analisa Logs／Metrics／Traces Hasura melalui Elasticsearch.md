@@ -1,4 +1,4 @@
-# Analisa Logs, Metrics, dan Traces Hasura melalui Elasticsearch
+# Analisa Logs/Metrics/Traces Hasura melalui Elasticsearch
 Untuk Melakukan analisa diatas, terlebih dahulu dilakukan konfigurasi antara Hasura dengan Otel Collector. Selanjutnya untuk membaca dan menganalisa dilakukan export dari Otelcol menuju Elastic
 
 ## Mengakses Graphical User Interface (GUI) Elastic
