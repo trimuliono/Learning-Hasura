@@ -17,11 +17,11 @@ Setelah berada pada menu `discover` klik dropdown di pojok kiri atas pada `data 
 
 ### host.hostname
 untuk mencari metrics berdasrkan hostname, user cukup mengetikan `host.name :` dan sistem akan menampilkan saran completition
-```KQL
-host.hostname :"hasura-tri-xxxx-xxxx:port"
-```
 ![image](https://github.com/user-attachments/assets/1cc6329a-e365-444a-99c9-9d0d21d5a727)
-
+```KQL
+host.hostname :"hasura-tri-74c8bbcb78-265mp:8080"
+```
+![image](https://github.com/user-attachments/assets/10d326d6-0351-44c0-b7a6-d97634a68756)
 
 ### status
 ```KQL
