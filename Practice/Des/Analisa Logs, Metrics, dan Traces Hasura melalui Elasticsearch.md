@@ -13,12 +13,15 @@ Setelah berada pada menu `discover` klik dropdown di pojok kiri atas pada `data 
 
 
 ## Melakukan filter search
-*Kibana Query Language (KQL)*, yaitu bahasa kueri yang digunakan di Kibana untuk melakukan pencarian data dan memfilter hasil pada indeks di Elasticsearch. KQL memiliki fitur `auto complitation` sehingga user cukupmengetikkan beberapa kata kunci awal dan sistem akan menampilkan saran complitation nya.
+*Kibana Query Language (KQL)*, yaitu bahasa kueri yang digunakan di Kibana untuk melakukan pencarian data dan memfilter hasil pada indeks di Elasticsearch. KQL memiliki fitur `auto complitation` sehingga user cukup mengetikkan beberapa kata kunci awal dan sistem akan menampilkan saran complitation nya.
 
 ### host.hostname
+untuk mencari metrics berdasrkan hostname, user cukup mengetikan `host.name :` dan sistem akan menampilkan saran completition
 ```KQL
 host.hostname :"hasura-tri-xxxx-xxxx:port"
 ```
+![image](https://github.com/user-attachments/assets/1cc6329a-e365-444a-99c9-9d0d21d5a727)
+
 
 ### status
 ```KQL
