@@ -46,6 +46,46 @@ Analisa dilakukan dengan melihat data pada **`apm elastic`** setelah dilakukan q
 
 ![image](https://github.com/user-attachments/assets/32515e0f-2f7e-4537-ada8-7152a30d44a8)
 
+Berikut adalah penjelasan **rentang waktu awal dan akhir** dari data pada grafik yang ditampilkan di dashboard **APM Elastic** untuk endpoint **`/v1/graphql`**:
+
+---
+
+### **1. Rentang Waktu pada Grafik**
+- Rentang waktu **awal**: Sekitar pukul **13:55:00**.  
+- Rentang waktu **akhir**: Sekitar pukul **14:20:00**.  
+- **Durasi**: Grafik mencakup periode sekitar **25 menit**.
+
+---
+
+### **2. Detail Data Sesuai Rentang Waktu**
+#### **Grafik Latency (Kiri)**
+- **Awal (13:55:00 - 14:10:00)**:  
+   - Tidak ada aktivitas signifikan yang tercatat di awal.  
+   - Waktu respons mulai muncul mendekati pukul **14:10**, naik ke sekitar **2 ms**.
+
+- **Puncak Aktivitas (14:10:00 - 14:15:00)**:  
+   - Latency **stabil** di kisaran **2 ms**, menunjukkan respons aplikasi tetap optimal saat jumlah request meningkat.
+
+- **Akhir (14:15:00 - 14:20:00)**:  
+   - Latency **menurun drastis mendekati 0 ms**.
+   - Penurunan ini terjadi seiring berkurangnya request atau throughput di akhir periode.
+
+---
+
+#### **Grafik Throughput (Kanan)**
+- **Awal (13:55:00 - 14:10:00)**:  
+   - Throughput **0 tpm** pada awal rentang waktu. Tidak ada request atau aktivitas yang diproses.
+
+- **Puncak Aktivitas (14:10:00 - 14:15:00)**:  
+   - Throughput mengalami lonjakan tajam hingga mencapai **1,000 tpm**.
+   - Ini menunjukkan peningkatan signifikan dalam jumlah transaksi atau request yang diterima.
+
+- **Akhir (14:15:00 - 14:20:00)**:  
+   - Throughput mulai menurun dan mendekati **0 tpm** pada akhir grafik.  
+   - Hal ini menunjukkan bahwa permintaan berkurang atau berhenti sepenuhnya dalam periode tersebut.
+
+---
+
 ![image](https://github.com/user-attachments/assets/ee69c138-7858-4c39-99b9-5f67de8626ed)
 
 ![image](https://github.com/user-attachments/assets/0d6610b8-5783-47c8-9eec-30848e2ca835)
