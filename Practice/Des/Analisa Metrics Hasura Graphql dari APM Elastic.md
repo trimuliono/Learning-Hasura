@@ -19,6 +19,31 @@ Analisa dilakukan dengan melihat data pada **`apm elastic`** setelah dilakukan q
   - Throughput untuk endpoint /v1/graphql adalah 62.7 tpm (transactions per minute).
   - Endpoint /v1/entitlement memiliki throughput < 0.1 tpm, artinya jarang diakses.
 
+---
+
+### 2. **Transactions**
+- **Definisi**: Transaksi adalah **unit request atau panggilan API** yang diterima oleh aplikasi dan dipantau oleh APM.
+- **Fungsi**:
+   - Setiap endpoint atau operasi aplikasi yang dipantau dianggap sebagai transaksi.
+   - Transaksi melacak **latency** (waktu respons rata-rata), **throughput**, **error rate**, dan **impact**.
+- **Rincian di tabel**:
+   - **Latency (avg.)**: Rata-rata waktu yang dibutuhkan untuk menyelesaikan request (ms).
+   - **Throughput**: Jumlah transaksi (request) per menit.
+   - **Failed Transaction Rate**: Persentase request yang gagal.
+   - **Impact**: Pengaruh endpoint terhadap performa keseluruhan aplikasi.
+
+**Contoh pada gambar:**
+- **`/v1/graphql`**:
+   - Latency: **2.5 ms** (cepat)
+   - Throughput: **62.7 tpm** (sering diakses)
+   - Impact: Tinggi (indikasi bahwa endpoint ini penting dalam aplikasi).
+- **`/v1/entitlement`**:
+   - Latency: **0.2 ms** (sangat cepat)
+   - Throughput: **< 0.1 tpm** (jarang digunakan).
+   - Impact: Rendah (penggunaan jarang).
+
+---
+
 ![image](https://github.com/user-attachments/assets/32515e0f-2f7e-4537-ada8-7152a30d44a8)
 
 ![image](https://github.com/user-attachments/assets/ee69c138-7858-4c39-99b9-5f67de8626ed)
