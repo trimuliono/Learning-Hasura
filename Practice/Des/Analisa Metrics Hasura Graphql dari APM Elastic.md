@@ -88,6 +88,30 @@ Berikut adalah penjelasan **rentang waktu awal dan akhir** dari data pada grafik
 
 ![image](https://github.com/user-attachments/assets/ee69c138-7858-4c39-99b9-5f67de8626ed)
 
+Berdasarkan **data distribusi latency** pada gambar **APM Elastic**, berikut adalah penjelasan detailnya:
+
+---
+
+### **1. Latency Distribution**
+- **Definisi**: Distribusi **latency** mengukur waktu yang dibutuhkan untuk menyelesaikan transaksi (request) dalam aplikasi. Grafik ini menunjukkan berapa banyak transaksi (request) terjadi pada interval waktu latency tertentu.
+- **Sumbu X (Horizontal)**: Menampilkan **latency** dalam satuan **microsecond (µs)** hingga **millisecond (ms)**.  
+- **Sumbu Y (Vertikal)**: Menampilkan jumlah transaksi untuk setiap interval latency.  
+- **Data Utama**:
+   - **Current Sample**: Ditandai dengan garis hijau, latency berada di sekitar **600 µs (microseconds)**.
+   - **95th Percentile (95p)**: Ini menunjukkan bahwa **95% dari transaksi** memiliki latency di bawah **5 ms**.
+
+---
+
+### **2. Distribusi Latency Berdasarkan Grafik**
+- **Rentang Utama**:
+   - Sebagian besar transaksi memiliki latency **antara 400 µs hingga 5 ms**.
+   - Distribusi membentuk dua kelompok utama:
+      - **Kelompok 1**: Banyak transaksi berada di rentang **400-900 µs**, menunjukkan bahwa sebagian besar request memiliki latency rendah.
+      - **Kelompok 2**: Lonjakan transaksi kedua terjadi di sekitar **3-6 ms**, menunjukkan sebagian request membutuhkan waktu lebih lama.
+- **Kelompok Latency Tinggi**:
+   - Terdapat transaksi dengan latency **20 ms hingga 300 ms**, tetapi jumlahnya sangat sedikit.
+
+---
 ![image](https://github.com/user-attachments/assets/0d6610b8-5783-47c8-9eec-30848e2ca835)
 
 ## Metadata
