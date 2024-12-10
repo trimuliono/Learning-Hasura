@@ -298,3 +298,87 @@ View transaction in Discover
   }
 }
 ```
+
+Kode **dokumen JSON** untuk **data transaksi APM (Application Performance Monitoring)** dari Elastic APM. Data ini berisi informasi mengenai satu transaksi yang dilacak oleh **APM Server**. Berikut penjelasan setiap komponen penting dalam dokumen ini:
+
+### **1. Informasi Observer (APM Server)**
+- **`observer.hostname`**: `worker1.k8s.alldataint.com`  
+   Nama host server APM yang mengamati transaksi ini.
+- **`observer.id`**: ID unik dari APM server (`4fa9447e-2492-4e9b-af43-0977fa67cb28`).
+- **`observer.type`**: `apm-server`  
+   Menunjukkan bahwa data ini berasal dari Elastic APM server.
+- **`observer.version`**: `7.17.18`  
+   Versi dari APM server yang digunakan.
+- **`observer.ephemeral_id`**: ID ephemeral (sementara) untuk instance server.
+
+---
+
+### **2. Informasi Agen**
+- **`agent.name`**: `otlp`  
+   Nama agen yang mengirim data ke APM (dalam hal ini menggunakan protokol OTLP - OpenTelemetry).
+- **`agent.version`**: `unknown`  
+   Versi agen tidak diketahui.
+
+---
+
+### **3. Informasi Transaksi**
+- **`transaction.name`**: `/v1/graphql`  
+   Nama endpoint transaksi, dalam hal ini sebuah API endpoint untuk **GraphQL**.
+- **`transaction.duration.us`**: `435` µs (microseconds)  
+   Waktu yang dibutuhkan untuk menyelesaikan transaksi ini (435 microdetik).
+- **`transaction.result`**: `Success`  
+   Hasil dari transaksi ini berhasil.
+- **`transaction.id`**: `540bd2d697c0aa8a`  
+   ID unik dari transaksi ini.
+- **`transaction.type`**: `custom`  
+   Jenis transaksi yang dilacak (disesuaikan untuk keperluan custom monitoring).
+- **`transaction.sampled`**: `true`  
+   Menandakan transaksi ini telah diambil sampelnya untuk pemantauan lebih dalam.
+
+---
+
+### **4. Informasi Trace**
+- **`trace.id`**: `fe75ad67ea3f85dd40b48cf819cdbaee`  
+   ID unik yang menghubungkan semua log, transaksi, dan jejak (trace) dalam satu siklus.
+
+---
+
+### **5. Informasi Service**
+- **`service.name`**: `hasura`  
+   Nama layanan atau aplikasi yang memproses transaksi ini.
+- **`service.framework.name`**: `hasura`  
+   Framework yang digunakan oleh layanan.
+- **`service.framework.version`**: `v2.42.0`  
+   Versi dari framework Hasura.
+
+---
+
+### **6. Informasi Tambahan / Label**
+- **`labels.graphql_operation_name`**: `TrigetUser`  
+   Nama operasi GraphQL yang dipanggil.
+- **`labels.request_id`**: `00866697-d793-42c1-a693-df18a8c34000`  
+   ID unik dari request HTTP.
+- **`labels.enduser_role`**: `admin`  
+   Role pengguna yang memanggil endpoint ini.
+- **`labels.http_response_content_length`**: `165`  
+   Panjang konten HTTP respons dalam byte.
+- **`labels.session_variables`**: `{"x-hasura-role":"admin"}`  
+   Variabel sesi yang berisi informasi role pengguna.
+
+---
+
+### **7. Informasi Event**
+- **`event.ingested`**: `2024-12-10T07:27:39.026Z`  
+   Waktu ketika event (transaksi) ini diterima oleh APM server.
+- **`event.outcome`**: `success`  
+   Status transaksi, yaitu sukses.
+
+---
+
+### **8. Informasi Waktu**
+- **`@timestamp`**: `2024-12-10T07:22:49.236Z`  
+   Waktu ketika transaksi ini dimulai.
+- **`timestamp.us`**: `1733815369236887`  
+   Waktu transaksi dalam format **microseconds** sejak epoch time.
+
+---
