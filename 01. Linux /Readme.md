@@ -59,3 +59,24 @@ Pembelajaran Linux akan diorganisir ke dalam tahapan berikut:
 
 ### 13. **Networking**
    - Konfigurasi jaringan dasar dengan `ping`, `ifconfig`, `ip`, `netstat`
+
+### 14. **Backup Tools**  
+   - Backup data menggunakan `tar`, `rsync`, dan alat lainnya  
+
+### 15. **Shell Programming**  
+   - Belajar menulis script menggunakan **Bash**  
+
+### 16. **Troubleshooting**  
+   - Mengidentifikasi dan memecahkan masalah umum di Linux  
+
+### 17. **Containerization**  
+   - Memahami dan bekerja dengan kontainer menggunakan **Docker**  
+
+---
+
+## 🎯 **Tujuan Pembelajaran**  
+1. Menguasai navigasi dan perintah dasar Linux  
+2. Memahami pengelolaan file, proses, dan user  
+3. Mengetahui cara mengelola jaringan dan sistem file  
+4. Belajar scripting dengan Bash untuk otomatisasi  
+5. Menyelami konsep **server**, **backup**, dan **containerization**  
