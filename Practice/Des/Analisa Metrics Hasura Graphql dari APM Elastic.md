@@ -10,6 +10,8 @@ Analisa dilakukan dengan melihat data pada apm elastic setelah dilakukan query g
 
 ![image](https://github.com/user-attachments/assets/0d6610b8-5783-47c8-9eec-30848e2ca835)
 
+## Metadata
+
 ![image](https://github.com/user-attachments/assets/42514182-12fd-41f4-a1dc-22580c99fd8b)
 
 ![image](https://github.com/user-attachments/assets/cf160cd0-f7e5-4f12-886b-b0c2709c1e55)
@@ -17,3 +19,5 @@ Analisa dilakukan dengan melihat data pada apm elastic setelah dilakukan query g
 ![image](https://github.com/user-attachments/assets/a4d31bf1-d42f-45b2-a19b-71f72b8841ad)
 
 ![image](https://github.com/user-attachments/assets/36ff3925-025c-429d-8ca4-3e3eb988d88e)
+
+## Timeline **/v1/graphql**
