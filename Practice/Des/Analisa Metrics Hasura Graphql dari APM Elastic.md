@@ -1,6 +1,10 @@
 # Analisa Metrics Hasura Graphql dari APM Elastic
 Analisa dilakukan dengan melihat data pada **`apm elastic`** setelah dilakukan query graphql hasura
+![image](https://github.com/user-attachments/assets/f1425ac7-8bed-45db-861b-f4b95a7b176e)
+
 ![image](https://github.com/user-attachments/assets/ca1ca11c-8e15-43fe-996d-f3fce42fa933)
+
+---
   
 ![image](https://github.com/user-attachments/assets/4e2bb3ed-c9fe-4823-ae30-8f4ab0f008c4)
 
