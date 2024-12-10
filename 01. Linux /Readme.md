@@ -15,3 +15,13 @@ Pembelajaran Linux akan diorganisir ke dalam tahapan berikut:
 ### 1. **Navigating Basics**
    - Dasar navigasi direktori di Linux
    - Perintah-perintah seperti `cd`, `ls`, `pwd`
+
+### 2. **Editing Files**
+   - Mengedit file menggunakan editor seperti `nano`, dan `vim`
+
+### 3. **Shell and Other Basics**
+   - **Command Path**. Membuat path di linux
+   - **Environment Variabel**: Variabel lingkungan (`PATH`, `HOME`, dsb.)
+   - **Command Help**: Menggunakan `man` pages, `--help` `info`
+   - **Redirects**: Input/Output redirection menggunakan `>`, `<`, `|`
+   - **Super User**: Menggunakan `sudo`, dan peran super user
