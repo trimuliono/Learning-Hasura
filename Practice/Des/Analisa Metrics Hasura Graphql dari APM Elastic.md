@@ -1,19 +1,20 @@
 # Analisa Metrics Hasura Graphql dari APM Elastic
 Analisa dilakukan dengan melihat data pada **`apm elastic`** setelah dilakukan query graphql hasura
 ![image](https://github.com/user-attachments/assets/ca1ca11c-8e15-43fe-996d-f3fce42fa933)
+  
+![image](https://github.com/user-attachments/assets/4e2bb3ed-c9fe-4823-ae30-8f4ab0f008c4)
 
 ## Throughput dan Transactions
 **APM Elastic** menyediakan observabilitas terhadap performa aplikasi. Berikut penjelasan mengenai Throughput dan Transactions yang terlihat di dashboard APM:
 
-**1. Throughput**
+### **1. Throughput**
     - **Definisi**: Throughput mengukur **jumlah transaksi atau request** yang diproses oleh aplikasi dalam satuan waktu tertentu.
     - **Satuan**: Biasanya dalam **transactions per minute (tpm).**
     - **Arti**: 
       - Semakin tinggi throughput, semakin banyak request yang diproses oleh aplikasi.
       - Throughput mencerminkan load atau beban kerja pada aplikasi.
     - **Grafik**: Menunjukkan jumlah transaksi per menit dalam rentang waktu tertentu.
-    
-![image](https://github.com/user-attachments/assets/4e2bb3ed-c9fe-4823-ae30-8f4ab0f008c4)
+
 
 ![image](https://github.com/user-attachments/assets/32515e0f-2f7e-4537-ada8-7152a30d44a8)
 
