@@ -15,6 +15,9 @@ Analisa dilakukan dengan melihat data pada **`apm elastic`** setelah dilakukan q
       - Throughput mencerminkan load atau beban kerja pada aplikasi.
   - **Grafik**: Menunjukkan jumlah transaksi per menit dalam rentang waktu tertentu.
 
+**Contoh pada gambar**:
+  - Throughput untuk endpoint /v1/graphql adalah 62.7 tpm (transactions per minute).
+  - Endpoint /v1/entitlement memiliki throughput < 0.1 tpm, artinya jarang diakses.
 
 ![image](https://github.com/user-attachments/assets/32515e0f-2f7e-4537-ada8-7152a30d44a8)
 
