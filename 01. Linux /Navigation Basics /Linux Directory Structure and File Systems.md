@@ -22,17 +22,23 @@ File sistem ini dapat dikategorikan kedalam 3 grup dasar:
 - **Sistem file berbasis memori**: Virtual, dibuat otomatis saat sistem dinyalakan dan dihapus saat sistem dimatikan. Data yang disimpan di sini hilang saat sistem reboot.
 Sistem file berbasis disk dan jaringan menyimpan informasi secara permanen, sedangkan data di sistem file berbasis memori hilang saat reboot.
 
-1. **Root File System Directory (`/`)**, Disk-Based
+### 1. **Root File System Directory (`/`)**, Disk-Based
   - Direktori tingkat atas dalam hierarki sistem file Linux.
   - Semua direktori dan file lainnya berada di bawah direktori ini.
 
-2. **/etc**
+### 2. **/etc**
   - Berisi file konfigurasi sistem dan skrip shell yang digunakan untuk booting dan inisialisasi sistem.
   - Contoh: `passwd`, `fstab`, dan `hosts`.
 
+### 3. **/root**
+  - Direktori Home default untuk user root (administrator sistem).
 
+### 4. **/mnt** atau **/media**
+  - Ini seperti **garasi**. Kamu bisa menyimpan barang dari luar rumah (`mount`), seperti USB atau hard disk (`sistem file sementara`).
 
-
+### 5. **The Boot File System (/boot)**, Disk-Based
+  - Direktori semua file penting untuk memulai (boot) sistem operasi Linux. Seperti kernel linux, file pendukung boot, dan file konfigurasi boot. 
+    
 ---
 
 **Source: `RHCSA® Red Hat® Enterprise Linux® 8 (UPDATED) Training and Exam Preparation Guide, EX200, Edisi Kedua, November 2020`**
