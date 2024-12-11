@@ -64,7 +64,9 @@ Sistem file berbasis disk dan jaringan menyimpan informasi secara permanen, seda
   - Direktori /usr/lib juga menyimpan program inisialisasi sistem dan manajemen layanan.
   - Subdirektori /usr/lib64 berisi rutinitas pustaka bersama 64-bit.
 
-### 12.
+### 12. **The Variable Directory (/var)**
+  - Berisi data yang sering berubah saat sistem berjalan
+  - File dalam direktori ini mencakup `log`, `satatus`, `spool`, `lock`, dan `data dinamis lainnya`.
 
 
 ---
