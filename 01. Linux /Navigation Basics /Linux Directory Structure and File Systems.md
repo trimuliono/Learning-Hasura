@@ -1,6 +1,7 @@
 # Struktur Direktori Linux
 
 ![image](https://github.com/user-attachments/assets/b76e052d-f940-4e27-a729-f35f928dc285)
+
 Di Linux, semua file dan folder (direktori) **tersusun rapi** seperti pohon terbalik. Pohon ini membantu komputer supaya file lebih mudah **dikelola** dan **ditemukan**.  
 
 Bayangkan seperti ini:  
