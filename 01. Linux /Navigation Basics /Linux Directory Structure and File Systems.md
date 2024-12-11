@@ -80,7 +80,19 @@ Sistem file berbasis disk dan jaringan menyimpan informasi secara permanen, seda
     = **Perangkat karakter**: Diakses secara serial dengan aliran bit yang ditransfer selama komunikasi kerneldengan dan perangkat. Contoh: konsol, printer serial, mouse, keyboard, `/dev/tty` (terminal), dll.
     -  **Perangkat Blok**: Diakses secara paralel dengan data yang dipertukarkan dalam blok selama komunikasi kernel dan  perangkat. Data pada perangkat blok diakses secara acak. Contoh: `/dev/sda` (hard drive), optical drive, printer paralel, dll.
 
+### 15. **The Procfs File System (/proc), Virtual**
+  - Digunakan untuk memelihara informasi tentang status saat ini dari kernel yang berjalan.
+  - Termasuk detail konfigurasi perangkat keras saat ini dan informasi status tentang CPU, memori, disk, partisi, sistem file, jaringan, proses yang berjalan, dan sebagainya.
+  - Informasi ini disimpan dalam hierarki subdirektori yang berisi ribuan file pseudo dengan panjang nol.
+  - File-file ini menunjuk ke data relevan yang dipelihara oleh kernel dalam memori.
+  - Struktur direktori virtual ini menyediakan antarmuka yang mudah untuk berinteraksi dengan informasi yang dipelihara oleh kernel.
+  - Sistem file Procfs dikelola secara dinamis oleh sistem.
+  - Isi dalam `/proc` dibuat dalam memori saat sistem boot, diperbarui selama runtime, dan dihapus saat sistem dimatikan.
 
+### 16. **The System File System (/sys), Virtual**
+- Berisi informasi tentang perangkat keras, driver, dan beberapa fitur kernel.
+- Informasi ini digunakan oleh kernel untuk memuat dukungan yang diperlukan untuk perangkat, membuat node perangkat di `/dev`, dan mengkonfigurasi perangkat.
+- Sistem file ini dikelola secara otomatis.
 
 
 ---
