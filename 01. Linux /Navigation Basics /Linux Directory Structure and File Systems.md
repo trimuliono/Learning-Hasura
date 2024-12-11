@@ -77,7 +77,7 @@ Sistem file berbasis disk dan jaringan menyimpan informasi secara permanen, seda
   - Berisi file perangkat yang mewakili komponen perangkat keras dan perangkat virtual.
   - Node perangkat ini dibuat dan dihapus secara otomatis oleh layanan **udevd** sesuai kebutuhan.
   - Ada dua jenis file perangkat: file perangkat karakter (atau mentah) dan file perangkat blok.
-    = **Perangkat karakter**: Diakses secara serial dengan aliran bit yang ditransfer selama komunikasi kerneldengan dan perangkat. Contoh: konsol, printer serial, mouse, keyboard, `/dev/tty` (terminal), dll.
+    - **Perangkat karakter**: Diakses secara serial dengan aliran bit yang ditransfer selama komunikasi kerneldengan dan perangkat. Contoh: konsol, printer serial, mouse, keyboard, `/dev/tty` (terminal), dll.
     -  **Perangkat Blok**: Diakses secara paralel dengan data yang dipertukarkan dalam blok selama komunikasi kernel dan  perangkat. Data pada perangkat blok diakses secara acak. Contoh: `/dev/sda` (hard drive), optical drive, printer paralel, dll.
 
 ### 15. **The Procfs File System (/proc), Virtual**
