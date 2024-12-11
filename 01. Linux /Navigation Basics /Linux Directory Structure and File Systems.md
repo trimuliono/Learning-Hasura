@@ -38,7 +38,17 @@ Sistem file berbasis disk dan jaringan menyimpan informasi secara permanen, seda
 
 ### 5. **The Boot File System (/boot)**, Disk-Based
   - Direktori semua file penting untuk memulai (boot) sistem operasi Linux. Seperti kernel linux, file pendukung boot, dan file konfigurasi boot. 
-    
+
+### 6. **/home** 
+  - Berisi direktori home dari masing-masing pengguna.
+  - Setiap pengguna memiliki subdirektori di bawah `/home`, seperti `/home/user1`. 
+
+### 7. **/opt**
+  - Berisi paket perangkat lunak opsional dan aplikasi pihak ketiga.
+  - Setiap aplikasi memiliki subdirektori di bawah `/opt`, seperti `/opt/app1`. 
+
+
+
 ---
 
 **Source: `RHCSA® Red Hat® Enterprise Linux® 8 (UPDATED) Training and Exam Preparation Guide, EX200, Edisi Kedua, November 2020`**
