@@ -59,7 +59,12 @@ Sistem file berbasis disk dan jaringan menyimpan informasi secara permanen, seda
   - Berisi biner sistem penting yang biasanya digunakan oleh pengguna root untuk administrasi sistem.
   - Contoh: `ifconfig`, `reboot`, dan `shutdown`.
 
+### 11. **/usr/lib dan /usr/lib64**
+  - Berisi rutinitas pustaka bersama yang diperlukan oleh banyak perintah dan program di /usr/bin dan /usr/sbin, serta oleh kernel dan aplikasi lainnya untuk instalasi dan operasi yang sukses.
+  - Direktori /usr/lib juga menyimpan program inisialisasi sistem dan manajemen layanan.
+  - Subdirektori /usr/lib64 berisi rutinitas pustaka bersama 64-bit.
 
+### 12.
 
 
 ---
