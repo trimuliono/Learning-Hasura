@@ -51,6 +51,17 @@ Sistem file berbasis disk dan jaringan menyimpan informasi secara permanen, seda
   - Berisi utilitas dan aplikasi pengguna.
   - Subdirektori termasuk `/usr/bin`, `/usr/sbin`, `/usr/lib`, dan `/usr/share`.
 
+### 9. **/usr/bin**
+  - Berisibiner perintah penting (eksekusi) yang diperlukan untuk  booting sistem dan mode pengguna tunggal.
+  - Contoh: `la`, `cp`, `mv`, dan `rm`.
+
+### 10.  **/usr/sbin**
+  - Berisi biner sistem penting yang biasanya digunakan oleh pengguna root untuk administrasi sistem.
+  - Contoh: `ifconfig`, `reboot`, dan `shutdown`.
+
+
+
+
 ---
 
 **Source: `RHCSA® Red Hat® Enterprise Linux® 8 (UPDATED) Training and Exam Preparation Guide, EX200, Edisi Kedua, November 2020`**
