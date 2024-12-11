@@ -67,6 +67,20 @@ Sistem file berbasis disk dan jaringan menyimpan informasi secara permanen, seda
 ### 12. **The Variable Directory (/var)**
   - Berisi data yang sering berubah saat sistem berjalan
   - File dalam direktori ini mencakup `log`, `satatus`, `spool`, `lock`, dan `data dinamis lainnya`.
+  - Contoh: `/var/log`, `/var/spool`, dan `/var/tmp`.
+
+### 13. **The Temporary Directory (/tmp)**
+  - Berisi file sementara yang dibuat oleh proses sistem dan pengguna.
+  - File di `/tmp` biasanya dihapus saat sistem reboot.
+
+### 14. **The Devices File System (/dev), Virtual**
+  - Berisi file perangkat yang mewakili komponen perangkat keras dan perangkat virtual.
+  - Node perangkat ini dibuat dan dihapus secara otomatis oleh layanan **udevd** sesuai kebutuhan.
+  - Ada dua jenis file perangkat: file perangkat karakter (atau mentah) dan file perangkat blok.
+    = **Perangkat karakter**: Diakses secara serial dengan aliran bit yang ditransfer selama komunikasi kerneldengan dan perangkat. Contoh: konsol, printer serial, mouse, keyboard, `/dev/tty` (terminal), dll.
+    -  **Perangkat Blok**: Diakses secara paralel dengan data yang dipertukarkan dalam blok selama komunikasi kernel dan  perangkat. Data pada perangkat blok diakses secara acak. Contoh: `/dev/sda` (hard drive), optical drive, printer paralel, dll.
+
+
 
 
 ---
