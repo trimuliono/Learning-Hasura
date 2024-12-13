@@ -123,3 +123,65 @@ root@server:~#
 
 - Huruf **"c"**: Menandakan **file perangkat karakter**.
 - Huruf **"b"**: Menandakan **file perangkat blok**.
+
+#### Menggunakan Perintah `file` dan `stat`
+
+Untuk mengetahui tipe file lebih detail, kita bisa menggunakan perintah `file`, dan `stat`:
+
+```bash
+root@server:~# file /dev/console
+/dev/console: character special (5/1)
+root@server:~# stat /dev/console
+  File: /dev/console
+  Size: 0               Blocks: 0          IO Block: 4096   character special file
+Device: 0,5     Inode: 13          Links: 1     Device type: 5,1
+Access: (0620/crw--w----)  Uid: (    0/    root)   Gid: (    5/     tty)
+Access: 2024-11-27 00:23:37.075447559 +0000
+Modify: 2024-11-27 00:23:37.075447559 +0000
+Change: 2024-11-27 00:23:37.075447559 +0000
+ Birth: 2024-11-06 05:02:02.296000003 +0000
+root@server:~# file /dev/sda
+/dev/sda: block special (8/0)
+root@server:~# stat /dev/sda
+  File: /dev/sda
+  Size: 0               Blocks: 0          IO Block: 4096   block special file
+Device: 0,5     Inode: 328         Links: 1     Device type: 8,0
+Access: (0660/brw-rw----)  Uid: (    0/    root)   Gid: (    6/    disk)
+Access: 2024-12-11 06:52:08.943709920 +0000
+Modify: 2024-11-27 00:23:37.114447127 +0000
+Change: 2024-11-27 00:23:37.114447127 +0000
+ Birth: 2024-11-06 05:02:07.443000168 +0000
+root@server:~#
+
+```
+
+- **Perintah `file /dev/console`** akan memberikan informasi spesifik mengenai tipe data dalam file, misalnya: `character special (5/1)`.
+- **character special**: Tipe file ini adalah perangkat character yang membaca/menulis data satu karakter dalam satu waktu, seperti terminal atau konsol.
+- **Perintah `stat /dev/console`** akan melaporkan bahwa file tersebut adalah **character special**.
+
+```bash
+Device type: 5,1
+Access: (0620/crw--w----)  Uid: (0/root)   Gid: (5/tty)
+```
+- **Device type (5,1)**: Kolom ini menunjukkan kombinasi major dan minor number.
+- **Group `tty`**: Ini menunjukkan bahwa group tty memiliki akses write-only ke perangkat ini.
+- Konsol digunakan oleh kernel untuk menampilkan pesan sistem dan input/output terminal utama.
+
+---
+
+#### Major dan Minor Number
+
+Setiap perangkat keras seperti disk, CD/DVD, printer, dan terminal memiliki **device driver** yang dimuat di kernel. Kernel berkomunikasi dengan perangkat keras melalui driver tersebut.
+
+- **Major Number**: Nomor unik yang digunakan kernel untuk mengenali jenis driver perangkat.  
+- **Minor Number**: Nomor yang mengidentifikasi perangkat atau partisi spesifik dalam kategori driver tersebut.  
+
+Contoh:
+
+- **Major Number 8**: Driver untuk **perangkat blok SATA**.  
+- **Major Number 253**: Driver untuk **device mapper** (VDO volume, LVM logical volumes, dll.).  
+- **Major Number 11**: Driver untuk **perangkat optik** (CD/DVD).  
+
+Kolom ke-5 dan ke-6 dalam output `ls -l` menunjukkan **major number** dan **minor number**.
+
+---
