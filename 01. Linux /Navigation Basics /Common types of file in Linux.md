@@ -30,7 +30,7 @@ Linux tidak memerlukan ekstensi untuk mengidentifikasi jenis file. Linux menyedi
 Contoh output yang dipersingkat dari direktori `/root`:
 
 ```bash
-root@server:~# ls -ll
+root@server:~# ls -l
 -rw-r--r-- 1 root root 1234 Jun 12 14:00 contoh_file.txt
 root@server:~#
 ```
@@ -42,8 +42,19 @@ Perhatikan tanda hubung (`-`) di kolom pertama sebelum `rw`. Tanda ini menunjukk
 Untuk mengetahui tipe file lebih detail, kita bisa menggunakan perintah `file`, dan `stat`:
 
 ```bash
-file contoh_file.txt
-stat contoh_file.txt
+root@server:~# file contoh_file.txt
+contoh_file.txt: ASCII text
+root@server:~# stat contoh_file.txt
+  File: contoh_file.txt
+  Size: 52              Blocks: 8          IO Block: 4096   regular file
+Device: 252,1   Inode: 1502382     Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2024-12-06 03:40:59.596756961 +0000
+Modify: 2024-10-25 04:21:43.456372700 +0000
+Change: 2024-10-25 04:21:43.456372700 +0000
+ Birth: 2024-10-25 04:21:43.456372700 +0000
+root@server:~#
+
 ```
 
 - **Perintah `file`** akan memberikan informasi spesifik mengenai tipe data dalam file, misalnya: `ASCII text`.  
