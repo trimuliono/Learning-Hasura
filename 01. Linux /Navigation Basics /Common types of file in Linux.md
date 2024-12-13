@@ -102,3 +102,24 @@ root@server:~#
 ---
 
 ### File Perangkat Blok dan Karakter
+
+Setiap perangkat keras dalam sistem memiliki file yang terkait di direktori `/dev`. File ini digunakan oleh sistem untuk berkomunikasi dengan perangkat kera tersebut. File ini dikenal sebagai **file perangkat**.
+
+#### Jenis file perangkat
+
+Terdapat dua jenis file perangkat:
+1. **File perangkat Karakter** (character / raw )
+2. **File perangkat Blok** (Block)
+
+Contoh output perintah `ls`:
+
+```bash
+root@server:~# ls -l /dev/console
+crw--w---- 1 root tty 5, 1 Nov 27 00:23 /dev/console
+root@server:~# ls -l /dev/sda
+brw-rw---- 1 root disk 8, 0 Nov 27 00:23 /dev/sda
+root@server:~#
+```
+
+- Huruf **"c"**: Menandakan **file perangkat karakter**.
+- Huruf **"b"**: Menandakan **file perangkat blok**.
