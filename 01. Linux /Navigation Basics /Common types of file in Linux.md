@@ -18,9 +18,21 @@ Linux mendukung berbagai jenis file yang diidentifikasi berdasarkan jenis data y
 
 Dua jenis file pertama (file reguler dan direktori) adalah yang paling umum di Linux. File perangkat digunakan oleh sistem operasi untuk berkomunikasi dengan perangkat periferal. Tautan simbolik juga sering ditemukan, sedangkan **named pipes** dan **socket** digunakan untuk komunikasi antar proses.
 
-### Mengenali Jenis File
+#### Mengenali Jenis File
 Linux tidak memerlukan ekstensi untuk mengidentifikasi jenis file. Linux menyediakan tiga perintah utama untuk mengetahui jenis file.
 - **file**
 - **stat**
 - **ls**
 
+### File Reguler
+**File Reguler** adalah file yang berisi teks atau data biner. File ini bisa berupa skrip shell atau perintah dalam format biner. Saat kita menjalankan perintah `ls` pada suatu direktori pada `cli`, semua file yang dimulai dengan tanda hubung (`-`) di awal kolom pertama menujukkan file reguler.
+
+Contoh output yang dipersingkat dari direktori `/root`:
+
+```bash
+root@server:~# ls -ll
+-rw-r--r-- 1 root root 1234 Jun 12 14:00 contoh_file.txt
+root@server:~#
+```
+
+Perhatikan tanda hubung (`-`) di kolom pertama sebelum `rw`. Tanda ini menunjukkan bahwa file tersebut adalah **file reguler**.
