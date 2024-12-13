@@ -75,3 +75,30 @@ root@server:~#
 
 Pada output di atas:
 - Huruf **"d"** di awal setiap baris menandakan bahwa file tersebut adalah **direktori**.
+
+#### Menggunakan Perintah `file` dan `stat`
+
+Untuk mengetahui tipe file lebih detail, kita bisa menggunakan perintah `file`, dan `stat`:
+
+```bash
+root@server:~# file /usr
+/usr: directory
+root@server:~# stat /usr
+  File: /usr
+  Size: 4096            Blocks: 8          IO Block: 4096   directory
+Device: 252,1   Inode: 1179649     Links: 13
+Access: (0755/drwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2024-12-11 03:36:43.358392726 +0000
+Modify: 2024-09-27 03:11:26.109060136 +0000
+Change: 2024-09-27 03:11:26.109060136 +0000
+ Birth: 2024-09-10 02:31:16.164929116 +0000
+root@server:~#
+
+```
+
+- **Perintah `file`** akan memberikan informasi spesifik mengenai tipe data dalam file, misalnya: `directory`.  
+- **Perintah `stat`** akan melaporkan bahwa file tersebut adalah **directory**.
+
+---
+
+### File Perangkat Blok dan Karakter
