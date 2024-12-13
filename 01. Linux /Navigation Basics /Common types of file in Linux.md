@@ -36,3 +36,17 @@ root@server:~#
 ```
 
 Perhatikan tanda hubung (`-`) di kolom pertama sebelum `rw`. Tanda ini menunjukkan bahwa file tersebut adalah **file reguler**.
+
+#### Menggunakan Perintah `file` dan `stat`
+
+Untuk mengetahui tipe file lebih detail, kita bisa menggunakan perintah `file`, dan `stat`:
+
+```bash
+file contoh_file.txt
+stat contoh_file.txt
+```
+
+- **Perintah `file`** akan memberikan informasi spesifik mengenai tipe data dalam file, misalnya: `ASCII text`.  
+- **Perintah `stat`** akan melaporkan bahwa file tersebut adalah **file reguler**.
+
+---
