@@ -61,3 +61,17 @@ root@server:~#
 - **Perintah `stat`** akan melaporkan bahwa file tersebut adalah **file reguler**.
 
 ---
+
+### File Direktori
+
+Direktori adalah wadah yang menyimpan  file dan subdirektori. Contoh output perintah `ls` di direktori `/usr/bin` akan menunjukkan beberapa direktori.
+Contoh:
+
+```bash
+root@server:~# ls -l
+drwxr-xr-x 2 root root 4096 Jun 12 10:30 example_directory
+root@server:~#
+```
+
+Pada output di atas:
+- Huruf **"d"** di awal setiap baris menandakan bahwa file tersebut adalah **direktori**.
