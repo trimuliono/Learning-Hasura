@@ -17,3 +17,10 @@ Linux mendukung berbagai jenis file yang diidentifikasi berdasarkan jenis data y
 7. **Socket** *(tidak dibahas di sini)*
 
 Dua jenis file pertama (file reguler dan direktori) adalah yang paling umum di Linux. File perangkat digunakan oleh sistem operasi untuk berkomunikasi dengan perangkat periferal. Tautan simbolik juga sering ditemukan, sedangkan **named pipes** dan **socket** digunakan untuk komunikasi antar proses.
+
+### Mengenali Jenis File
+Linux tidak memerlukan ekstensi untuk mengidentifikasi jenis file. Linux menyediakan tiga perintah utama untuk mengetahui jenis file.
+- **file**
+- **stat**
+- **ls**
+
