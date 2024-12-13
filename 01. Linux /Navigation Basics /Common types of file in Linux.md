@@ -185,3 +185,41 @@ Contoh:
 Kolom ke-5 dan ke-6 dalam output `ls -l` menunjukkan **major number** dan **minor number**.
 
 ---
+
+### Tautan Simbolik (Symbolic Link)
+
+**Tautan simbolik** (disebut juga **soft link** atau **symlink**) adalah referensi atau pintasan ke file atau direktori lain.  
+
+Jika kita menjalankan perintah `ls -l` pada file atau direktori yang memiliki tautan simbolik, outputnya akan dimulai dengan huruf **"l"**, dan terdapat tanda panah (->) yang menunjukkan target tautan. Contoh:
+
+```bash
+root@server:~# ls -l /usr/sbin/vigr
+lrwxrwxrwx 1 root root 4 Apr  9  2024 /usr/sbin/vigr -> vipw
+root@server:~#
+```
+
+- Huruf **"l"**: Menandakan file tersebut adalah **tautan simbolik**.  
+- **Panah "->"**: Menunjukkan lokasi target dari tautan tersebut.
+
+### Perintah `file` dan `stat` pada Tautan Simbolik
+
+Untuk memastikan file tersebut adalah tautan simbolik, jalankan perintah berikut:
+
+```bash
+root@server-eric:~# file /usr/sbin/vigr
+/usr/sbin/vigr: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=xxxxxxxxxxxxxxxx, stripped
+root@server-eric:~# stat /usr/sbin/vigr
+  File: /usr/sbin/vigr -> vipw
+  Size: 4               Blocks: 0          IO Block: 4096   symbolic link
+Device: 252,1   Inode: 1187771     Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2024-12-13 06:49:15.790004806 +0000
+Modify: 2024-04-09 07:01:02.000000000 +0000
+Change: 2024-09-10 02:31:28.229842382 +0000
+ Birth: 2024-09-10 02:31:28.229842382 +0000
+root@server-eric:~#
+```
+
+Output akan menunjukkan bahwa file tersebut adalah **symbolic link**.
+
+---
