@@ -38,7 +38,28 @@ root@server:~# ls -l file2
 root@server:~#
 ```
 
+### Membuat File dengan `cat`
+
+Perintah `cat` (concatenate) digunakan untuk menampilkan, menggabungkan, atau menulis konten file. Perintah ini juga bisa digunakan untuk membuat file baru dan menambahkan konten ke dalamnya.
+
+Contoh:
+
+```bash
+root@server:~# cat > file1
+root@server:~# ls -l file1
+-rw-r--r-- 1 root root 0 Dec 16 02:41 file1
+root@server:~#
+```
+
+- Setelah menjalankan perintah `**cat > file1**` terminal akan menunggu input user.
+- Ketik konten yang ingin dimasukkan, atau langsung;
+- Tekan **Ctrl + D** untuk menyimpan dan keluar.
+- `>` adalah operator **redirect** yang menulis output ke file.
+- Jika file belum ada, maka file baru akan dibuat.
+- Jika file sudah ada, konten lama akan **ditimpa**.
+
 ---
+
 **Source: `RHCSA® Red Hat® Enterprise Linux® 8 (UPDATED) Training and Exam Preparation Guide, EX200, Edisi Kedua, November 2020`**
 
 `Hal: 142-`
