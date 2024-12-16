@@ -46,11 +46,12 @@ renamed 'dir2' -> 'renamedir2'
 root@server:~#
 ```
 
-| Opsi | Deskripsi |
-| ---- | --------- |
-| `-i` | Meminta konfirmasi sebelum menimpa file yang ada |
-| `-f` | Memaksa operasi tanpa meminta konfirmasi |
+| Opsi   | Deskripsi                                           |
+| ------ | --------------------------------------------------- |
+| `-i` | Meminta konfirmasi sebelum menimpa file yang ada    |
+| `-f` | Memaksa operasi tanpa meminta konfirmasi            |
 | `-v` | Menampilkan setiap operasi yang dilakukan (verbose) |
+| `-n` | Jangan menimpa file yang sudah ada                  |
 
 ---
 
