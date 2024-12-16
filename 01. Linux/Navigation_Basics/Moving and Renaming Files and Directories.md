@@ -24,12 +24,36 @@ root@server:~# ls -l renamed.txt
 root@server:~#
 ```
 
+---
 
+## Memindahkan dan Mengganti Nama Direktori
 
+**Memindahkan Direktori**:
 
+```bash
+root@server:~# mv -v renamedir2 dir1
+renamed 'renamedir2' -> 'dir1/renamedir2'
+root@server:~# ls dir1/
+renamedir2
+root@server:~#
+```
 
+**Mengganti nama Direktori**:
+
+```bash
+root@server:~# mv -v dir2 renamedir2
+renamed 'dir2' -> 'renamedir2'
+root@server:~#
+```
+
+| Opsi | Deskripsi |
+| ---- | --------- |
+| `-i` | Meminta konfirmasi sebelum menimpa file yang ada |
+| `-f` | Memaksa operasi tanpa meminta konfirmasi |
+| `-v` | Menampilkan setiap operasi yang dilakukan (verbose) |
 
 ---
+
 **Source: `RHCSA® Red Hat® Enterprise Linux® 8 (UPDATED) Training and Exam Preparation Guide, EX200, Edisi Kedua, November 2020`**
 
 `Hal: 149`
