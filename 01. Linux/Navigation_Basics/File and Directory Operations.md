@@ -51,7 +51,7 @@ root@server:~# ls -l file1
 root@server:~#
 ```
 
-- Setelah menjalankan perintah `**cat > file1**` terminal akan menunggu input user.
+- Setelah menjalankan perintah **cat > file1** terminal akan menunggu input user.
 - Ketik konten yang ingin dimasukkan, atau langsung;
 - Tekan **Ctrl + D** untuk menyimpan dan keluar.
 - `>` adalah operator **redirect** yang menulis output ke file.
@@ -60,7 +60,36 @@ root@server:~#
 
 ---
 
+### Membuat Direktori 
+
+Untuk membuat direktori pada linux hanya terdapat satu perintah utama yaitu `mkdir`. Perintah ini memungkinkan user untuk membuat satu atau beberapa direktori sekaligus.
+
+Contoh:
+
+```bash
+root@server:~# mkdir dir1
+root@server:~# mkdir -v dir2
+mkdir: created directory 'dir2'
+root@server:~# mkdir -vp dir3/subdir1/subsubdir1
+mkdir: created directory 'dir3'
+mkdir: created directory 'dir3/subdir1'
+mkdir: created directory 'dir3/subdir1/subsubdir1'
+root@server:~# mkdir -v dir4 dir5 dir6
+mkdir: created directory 'dir4'
+mkdir: created directory 'dir5'
+mkdir: created directory 'dir6'
+root@server:~#
+```
+
+| Opsi  | Deskripsi                                       |
+|-------|-------------------------------------------------|
+| `-p`  | Membuat direktori bersarang (parent directories) jika belum ada. |
+| `-v`  | Menampilkan pesan setiap direktori yang dibuat. |
+| `--help` | Menampilkan panduan penggunaan `mkdir`.      |
+
+---
+
 **Source: `RHCSA® Red Hat® Enterprise Linux® 8 (UPDATED) Training and Exam Preparation Guide, EX200, Edisi Kedua, November 2020`**
 
-`Hal: 142-`
+`Hal: 142-144`
 ---
