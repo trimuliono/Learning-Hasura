@@ -60,7 +60,7 @@ root@server:~#
 
 ---
 
-### Membuat Direktori 
+### Membuat Direktori
 
 Untuk membuat direktori pada linux hanya terdapat satu perintah utama yaitu `mkdir`. Perintah ini memungkinkan user untuk membuat satu atau beberapa direktori sekaligus.
 
@@ -81,15 +81,92 @@ mkdir: created directory 'dir6'
 root@server:~#
 ```
 
-| Opsi  | Deskripsi                                       |
-|-------|-------------------------------------------------|
-| `-p`  | Membuat direktori bersarang (parent directories) jika belum ada. |
-| `-v`  | Menampilkan pesan setiap direktori yang dibuat. |
-| `--help` | Menampilkan panduan penggunaan `mkdir`.      |
+| Opsi       | Deskripsi                                                        |
+| ---------- | ---------------------------------------------------------------- |
+| `-p`     | Membuat direktori bersarang (parent directories) jika belum ada. |
+| `-v`     | Menampilkan pesan setiap direktori yang dibuat.                  |
+| `--help` | Menampilkan panduan penggunaan `mkdir`.                        |
+
+---
+
+## Menghapus File dan Direktori
+
+Menghapus file di Linux berarti membuang file yang tidak diinginkan atau tidak perlu dari komputer Anda. Anda menggunakan perintah rm untuk menghapus file, dan itu bersifat permanen, jadi berhati-hatilah. Kita juga dapat menggunakan `rm -i` (interaktif) untuk meminta konfirmasi sebelum menghapus, yang membantu mencegah hilangnya file penting secara tidak sengaja.
+
+**Menghapus 1 file**
+
+```bash
+root@server:~# ls file1.txt
+file1.txt
+root@server:~# rm file1.txt
+root@server:~# ls file1.txt
+ls: cannot access 'file1.txt': No such file or directory
+root@server:~#
+```
+
+**Menghapus banyak file**
+
+```bash
+root@server:~# ls *.txt
+file1.txt  file2.txt  file3.txt
+root@server:~# rm file1.txt file2.txt file3.txt
+root@server:~# ls *.txt
+ls: cannot access '*.txt': No such file or directory
+root@server:~#
+```
+
+**Menghapus file dengan `-i` untuk keamanan**
+
+```bash
+root@server:~# ls *.txt
+important_file.txt
+root@server:~# rm -i important_file.txt
+rm: remove regular empty file 'important_file.txt'? y
+root@server:~# ls *.txt
+ls: cannot access '*.txt': No such file or directory
+root@server:~#
+```
+
+---
+
+**Menghapus Direktori kosong dengan `rm -d`**
+
+```bash
+root@server:~# rm emptydir/
+rm: cannot remove 'emptydir/': Is a directory
+root@server:~# rm -d emptydir/
+root@server:~# ls emptydir/
+ls: cannot access 'emptydir/': No such file or directory
+root@server:~#
+```
+
+**Menghapus Direktori kosong dengan `rmdir`**
+
+```bash
+root@server:~# rm emptydir2/
+rm: cannot remove 'emptydir2/': Is a directory
+root@server:~# rmdir emptydir2/
+root@server:~# ls emptydir2
+ls: cannot access 'emptydir2': No such file or directory
+root@server:~#
+```
+
+**Menghapus Direktori dan semua isi di dalamnya dengan `rm -r` (recursive)**
+
+```bash
+root@server:~# ls dir1
+file.txt
+root@server:~# rmdir dir1
+rmdir: failed to remove 'dir1': Directory not empty
+root@server:~# rm -r dir1
+root@server:~# ls dir1
+ls: cannot access 'dir1': No such file or directory
+root@server:~#
+```
 
 ---
 
 **Source: `RHCSA® Red Hat® Enterprise Linux® 8 (UPDATED) Training and Exam Preparation Guide, EX200, Edisi Kedua, November 2020`**
 
-`Hal: 142-144`
+`Hal: 142-150`
 ---
