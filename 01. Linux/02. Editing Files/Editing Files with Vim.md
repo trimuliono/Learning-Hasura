@@ -42,6 +42,8 @@ Output:
 
 ![1734406672841](image/EditingFileswithVim/1734406672841.png)
 
+---
+
 ## Inserting text
 
 Secara default saat awal dijalankan, editor vim akan masuk dalam `mode normal`. ada enam perintah yang dapat digunakan untuk pindah ke `mode insert`.
@@ -56,6 +58,8 @@ Secara default saat awal dijalankan, editor vim akan masuk dalam `mode normal`. 
 | **O**   | Insert baris baru di atas baris saat ini   |
 
 Untuk keluar dari mode insert ketika sudah selesai mengisi teks gunakan tombol `ESC`.
+
+---
 
 ## Navigasi dalam Normal Mode
 
@@ -82,6 +86,8 @@ Navigasi dalam **Normal Mode** digunakan untuk **bergerak di dalam teks** atau *
 | `Ctrl + d`     | Scroll turun setengah layar.             |
 | `Ctrl + u`     | Scroll naik setengah layar.              |
 
+---
+
 ## **Menghapus Teks di Vim**
 
 Vim menyediakan beberapa perintah untuk melakukan operasi penghapusan teks. Perintah-perintah ini membantu Anda menghapus karakter, kata, atau baris secara efisien.
@@ -97,6 +103,24 @@ Vim menyediakan beberapa perintah untuk melakukan operasi penghapusan teks. Peri
 | `dd`          | Menghapus seluruh baris tempat kursor berada.                        |
 | `D`           | Menghapus teks dari posisi kursor hingga akhir baris saat ini.       |
 | `:6,12d`      | Menghapus baris 6 hingga baris 12. *(Mode Command)*                  |
+
+---
+
+## **Membatalkan (Undo) dan Mengulangi (Repeat) Perintah di Vim**
+
+Vim menyediakan perintah untuk membatalkan perubahan terakhir (**Undo**) dan mengulangi perintah yang terakhir dijalankan (**Repeat**). Tabel berikut menjelaskan perintah-perintah tersebut.
+
+
+### **Tabel Perintah Undo dan Repeat**
+
+| **Perintah**    | **Aksi**                                                         |
+|-----------------|------------------------------------------------------------------|
+| `u`            | Membatalkan (undo) perintah terakhir.                            |
+| `U`            | Membatalkan semua perubahan yang dilakukan pada baris saat ini.  |
+| `:u`           | Membatalkan perintah mode baris terakhir. *(Mode Command)*       |
+| `.` (titik)    | Mengulangi perintah terakhir yang dijalankan.                    |
+
+---
 
 ---
 
