@@ -7,12 +7,15 @@ Vim (Vi Improved) adalah editor teks yang kuat dan fleksibel yang digunakan dala
 Editor `vim` memiliki tiga mode operasi:
 
 - **Normal** (untuk navigasi dan manipulasi)
+
 ![1734410516930](image/EditingFileswithVim/1734410516930.png)
 
 - **Insert** (untuk editing teks)
+
 ![1734410555337](image/EditingFileswithVim/1734410555337.png)
 
 - **Command** (untuk menjalankan perintah)
+
 ![1734410595186](image/EditingFileswithVim/1734410595186.png)
 
 ---
