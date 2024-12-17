@@ -82,6 +82,21 @@ Navigasi dalam **Normal Mode** digunakan untuk **bergerak di dalam teks** atau *
 | `Ctrl + d`     | Scroll turun setengah layar.             |
 | `Ctrl + u`     | Scroll naik setengah layar.              |
 
+## **Menghapus Teks di Vim**
+
+Vim menyediakan beberapa perintah untuk melakukan operasi penghapusan teks. Perintah-perintah ini membantu Anda menghapus karakter, kata, atau baris secara efisien.
+
+
+### **Tabel Perintah Menghapus Teks**
+
+| **Perintah**   | **Aksi**                                                             |
+|----------------|----------------------------------------------------------------------|
+| `x`           | Menghapus karakter di posisi kursor.                                 |
+| `X`           | Menghapus karakter sebelum posisi kursor.                            |
+| `dw`          | Menghapus kata atau bagian kata di sebelah kanan posisi kursor.      |
+| `dd`          | Menghapus seluruh baris tempat kursor berada.                        |
+| `D`           | Menghapus teks dari posisi kursor hingga akhir baris saat ini.       |
+| `:6,12d`      | Menghapus baris 6 hingga baris 12. *(Mode Command)*                  |
 
 ---
 
