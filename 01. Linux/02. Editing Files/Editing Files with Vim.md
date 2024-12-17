@@ -90,7 +90,7 @@ Navigasi dalam **Normal Mode** digunakan untuk **bergerak di dalam teks** atau *
 
 ## **Menghapus Teks di Vim**
 
-Vim menyediakan beberapa perintah untuk melakukan operasi penghapusan teks. Perintah-perintah ini membantu Anda menghapus karakter, kata, atau baris secara efisien.
+Vim menyediakan beberapa perintah untuk melakukan operasi penghapusan teks. Perintah-perintah ini membantu Kita menghapus karakter, kata, atau baris secara efisien.
 
 
 ### **Tabel Perintah Menghapus Teks**
@@ -121,6 +121,21 @@ Vim menyediakan perintah untuk membatalkan perubahan terakhir (**Undo**) dan men
 | `.` (titik)    | Mengulangi perintah terakhir yang dijalankan.                    |
 
 ---
+
+## **Mencari Teks di Vim**
+
+Di Vim, Kita dapat melakukan **pencarian maju** atau **pencarian mundur** saat berada di **Normal Mode** menggunakan karakter `/` atau `?` diikuti dengan teks yang ingin dicari. 
+
+---
+
+### **Tabel Perintah Pencarian Teks**
+
+| **Perintah**     | **Aksi**                                                       |
+|------------------|----------------------------------------------------------------|
+| `/string`        | Mencari **maju** ke arah bawah untuk string tertentu.          |
+| `?string`        | Mencari **mundur** ke arah atas untuk string tertentu.         |
+| `n`              | Menemukan kemunculan **berikutnya** dari string yang dicari.   |
+| `N`              | Menemukan kemunculan **sebelumnya** dari string yang dicari.   |
 
 ---
 
