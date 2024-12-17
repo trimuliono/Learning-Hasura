@@ -7,8 +7,13 @@ Vim (Vi Improved) adalah editor teks yang kuat dan fleksibel yang digunakan dala
 Editor `vim` memiliki tiga mode operasi:
 
 - **Normal** (untuk navigasi dan manipulasi)
+![1734410516930](image/EditingFileswithVim/1734410516930.png)
+
 - **Insert** (untuk editing teks)
+![1734410555337](image/EditingFileswithVim/1734410555337.png)
+
 - **Command** (untuk menjalankan perintah)
+![1734410595186](image/EditingFileswithVim/1734410595186.png)
 
 ---
 
@@ -36,7 +41,7 @@ Output:
 
 ## Inserting text
 
-Secara default saat awal dijalankan, editor vim akan masuk dalam `mode command`. ada enam perintah yang dapat digunakan untuk pindah ke `mode insert`.
+Secara default saat awal dijalankan, editor vim akan masuk dalam `mode normal`. ada enam perintah yang dapat digunakan untuk pindah ke `mode insert`.
 
 | Command | Action                                     |
 |---------|--------------------------------------------|
@@ -46,8 +51,6 @@ Secara default saat awal dijalankan, editor vim akan masuk dalam `mode command`.
 | **A**   | Insert teks di akhir baris saat ini        |
 | **o**   | Insert baris baru di bawah baris  saat ini |
 | **O**   | Insert baris baru di atas baris saat ini   |
-
-
 
 ---
 
