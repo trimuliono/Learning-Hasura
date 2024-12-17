@@ -55,6 +55,34 @@ Secara default saat awal dijalankan, editor vim akan masuk dalam `mode normal`. 
 | **o**   | Insert baris baru di bawah baris  saat ini |
 | **O**   | Insert baris baru di atas baris saat ini   |
 
+Untuk keluar dari mode insert ketika sudah selesai mengisi teks gunakan tombol `ESC`.
+
+## Navigasi dalam Normal Mode
+
+Navigasi dalam **Normal Mode** digunakan untuk **bergerak di dalam teks** atau **memanipulasi teks** menggunakan kombinasi tombol navigasi. Mode ini adalah mode default saat Kita membuka file di Vim.
+
+### **Navigasi Dasar**  
+| Tombol          | Fungsi                                   |
+|-----------------|------------------------------------------|
+| `h`            | Geser kursor ke kiri.                    |
+| `l`            | Geser kursor ke kanan.                   |
+| `j`            | Geser kursor ke bawah (baris berikutnya).|
+| `k`            | Geser kursor ke atas (baris sebelumnya). |
+
+### **Navigasi Cepat**  
+| Perintah        | Fungsi                                   |
+|-----------------|------------------------------------------|
+| `0`            | Pindah ke awal baris.                    |
+| `$`            | Pindah ke akhir baris.                   |
+| `w`            | Lompat ke awal kata berikutnya.          |
+| `b`            | Lompat ke awal kata sebelumnya.          |
+| `gg`           | Pindah ke awal file.                     |
+| `G`            | Pindah ke akhir file.                    |
+| `:n`           | Lompat ke baris ke-`n`. (Contoh: `:5`).   |
+| `Ctrl + d`     | Scroll turun setengah layar.             |
+| `Ctrl + u`     | Scroll naik setengah layar.              |
+
+
 ---
 
 **Source: `RHCSA® Red Hat® Enterprise Linux® 8 (UPDATED) Training and Exam Preparation Guide, EX200, Edisi Kedua, November 2020`**
