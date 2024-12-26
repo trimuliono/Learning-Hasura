@@ -48,3 +48,30 @@ Dokumen ini menjelaskan langkah-langkah untuk menghubungkan SQL Server ke Hasura
 ![1735183369745](image/ConnectSqlServertoHasuraV2/1735183369745.png)
 
 ![1735183472537](image/ConnectSqlServertoHasuraV2/1735183472537.png)
+
+---
+
+### 4. Masukkan detail koneksi
+Isi form dengan detail koneksi SQL Server:
+
+- **Database Display Name**: 
+  - Nama unik untuk mengenali database ini di Hasura. Misalnya: `triSqlServer`.
+
+- **Connection String**:
+  Gunakan format connection string berikut:
+
+  ```
+    Driver={ODBC Driver 18 for SQL Server);Server=serveraddress,port;Database=dbname;Uid=username;Pwd=password;Encrypt=optional;
+  ```
+
+  ![1735184829449](image/ConnectSqlServertoHasuraV2/1735184829449.png)
+
+  ---
+
+### 6. Simpan Koneksi
+1. Klik tombol **Connect Database**.
+2. Jika koneksi berhasil, database akan muncul di daftar database pada tab **Data**.
+
+![1735185454536](image/ConnectSqlServertoHasuraV2/1735185454536.png)
+
+---
