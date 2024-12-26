@@ -28,3 +28,23 @@ Dokumen ini menjelaskan langkah-langkah untuk menghubungkan SQL Server ke Hasura
 ![1735182627434](image/ConnectSqlServertoHasuraV2/1735182627434.png)
 
 ![1735182491573](image/ConnectSqlServertoHasuraV2/1735182491573.png)
+
+---
+
+### 2. Navigasi ke Tab *Data*
+1. Di panel navigasi atas, klik tab **Data**.
+
+![1735183027527](image/ConnectSqlServertoHasuraV2/1735183027527.png)
+
+---
+
+### 3. Tambahkan Database Baru
+1. Klik tombol **Connect Database**.
+2. Pilih **MSSQL** sebagai tipe database.
+3. Klik tombol **Connect Existing Database**.
+
+![1735183298057](image/ConnectSqlServertoHasuraV2/1735183298057.png)
+
+![1735183369745](image/ConnectSqlServertoHasuraV2/1735183369745.png)
+
+![1735183472537](image/ConnectSqlServertoHasuraV2/1735183472537.png)
