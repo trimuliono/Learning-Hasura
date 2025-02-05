@@ -1,54 +1,90 @@
-# Infrastructure Study for Hasura
+# Hasura Project Setup & Monitoring Guide
 
-## Overview
+Selamat datang di repositori proyek Hasura! Proyek ini bertujuan untuk memberikan panduan menyeluruh dalam mengatur dan mempelajari berbagai teknologi yang diperlukan untuk membangun aplikasi dengan Hasura, serta alat monitoring yang dapat membantu memantau dan mengoptimalkan kinerja aplikasi.
 
-Hasura is a powerful open-source engine that auto-generates GraphQL APIs from your PostgreSQL database. It simplifies and accelerates the process of building scalable and real-time applications by handling many complex backend tasks out-of-the-box. With Hasura, developers can focus on creating features while reducing the need to write custom backend code.
+## Teknologi yang Terlibat
 
-However, to effectively work with Hasura in production environments, it is important to have a foundational understanding of key infrastructure technologies such as Linux, Docker, Kubernetes, PostgreSQL, and Redis. These technologies provide the backbone for deploying, managing, and scaling Hasura-based applications.
+Dalam proyek ini, kamu akan belajar tentang berbagai alat dan teknologi yang mendukung pengembangan aplikasi modern, termasuk:
+- **Hasura**: Platform GraphQL yang memungkinkan pengembangan backend dengan cepat.
+- **Docker** dan **Kubernetes**: Untuk containerization dan orkestrasi aplikasi.
+- **PostgreSQL**, **MySQL**, dan **MSSQL**: Database yang mendukung Hasura.
+- **Redis**: Untuk caching dan penyimpanan data sementara.
+- **Grafana** dan **Prometheus**: Alat untuk monitoring metrik performa aplikasi.
+- **ElasticSearch** dan **Kibana**: Untuk pencarian dan visualisasi log.
+- **APM (Application Performance Monitoring)**: Untuk memonitor kinerja aplikasi.
+- **Postman** dan **JMeter**: Untuk testing API dan melakukan load testing.
 
-## Why Learn These Technologies?
+## Struktur Folder
 
-### 1. **Linux**
-   - **Reason**: Linux is the operating system used in most cloud servers and development environments. Knowing Linux basics is essential for configuring, troubleshooting, and securing the systems where Hasura and its dependencies run.
-   - **Skills**: Command-line operations, file permissions, process management, and networking.
+Repositori ini diatur dengan mengikuti urutan teknologi yang disarankan untuk dipelajari. Berikut adalah penjelasan singkat tentang setiap folder:
 
-### 2. **Docker**
-   - **Reason**: Hasura is often deployed as a Docker container. Understanding Docker enables you to easily set up isolated development environments, run Hasura locally, and deploy it to production with consistency.
-   - **Skills**: Container management, image creation, and Docker Compose.
+### 1. `1_linux/`
+- **Deskripsi**: Materi pembelajaran tentang **Linux** dan penggunaan dasar terminal yang penting untuk pengelolaan server dan pengembangan aplikasi.
+- **Contoh materi**: Dasar-dasar Linux, perintah-perintah penting, dan pengelolaan file di Linux.
 
-### 3. **Kubernetes**
-   - **Reason**: Kubernetes is the leading platform for orchestrating containerized applications at scale. It provides mechanisms for scaling, monitoring, and updating Hasura services in a production environment.
-   - **Skills**: Deploying and managing containers, scaling, and automating processes using Kubernetes.
+### 2. `2_docker/`
+- **Deskripsi**: Panduan tentang **Docker** untuk membuat kontainer aplikasi yang ringan dan mudah di-deploy.
+- **Contoh materi**: Cara membuat container dengan Docker, penggunaan Docker Compose untuk mengatur multi-container setup.
 
-### 4. **PostgreSQL**
-   - **Reason**: PostgreSQL is the core database used by Hasura to store and manage application data. A deep understanding of PostgreSQL will help you optimize database performance, write complex queries, and manage migrations effectively.
-   - **Skills**: Database design, query optimization, backup/restore, and indexing.
+### 3. `3_db/`
+- **Deskripsi**: Materi pembelajaran tentang **PostgreSQL**, **MySQL**, dan **MSSQL**, serta cara mengonfigurasi dan menggunakannya dengan Hasura.
+- **Contoh materi**: Instalasi dan pengaturan database, serta mengintegrasikan dengan Hasura.
 
-### 5. **Redis**
-   - **Reason**: Redis can be integrated with Hasura to provide caching, improve query performance, handle session management, and facilitate Pub/Sub messaging. Redis is crucial for optimizing and scaling real-time applications.
-   - **Skills**: Key-value data storage, caching, Pub/Sub systems, and persistence strategies.
+### 4. `4_hasura_v2/`
+- **Deskripsi**: Panduan untuk memulai dengan **Hasura v2**, termasuk instalasi dan pengaturan awal.
+- **Contoh materi**: Cara mengatur Hasura v2, memahami fitur-fitur dasarnya.
 
-## Learning Path
+### 5. `5_hasura_v3/`
+- **Deskripsi**: Materi tentang **Hasura v3**, yang mencakup pembaruan fitur dan cara migrasi dari v2 ke v3.
+- **Contoh materi**: Fitur baru di Hasura v3, panduan upgrade dan implementasi.
 
-To make the most of Hasura and build robust applications, start by understanding each of these technologies in the following order:
-1. **Linux** – Master the foundational system where everything runs.
-2. **Docker** – Learn to containerize Hasura and its dependencies for consistent environments.
-3. **PostgreSQL** – Get comfortable with Hasura’s core database.
-4. **Redis** – Explore how to use Redis for caching and real-time messaging.
-5. **Kubernetes** – Finally, dive into orchestration for deploying and scaling your applications.
+### 6. `6_redis/`
+- **Deskripsi**: Panduan untuk menggunakan **Redis** sebagai sistem caching dan penyimpanan data sementara.
+- **Contoh materi**: Instalasi Redis, teknik caching dasar, dan pengaturan Redis dengan Hasura.
 
-By mastering these technologies, you'll be well-prepared to work with Hasura efficiently in both development and production environments.
+### 7. `7_kubernetes/`
+- **Deskripsi**: Pembelajaran tentang **Kubernetes** untuk orkestrasi aplikasi dan deployment skala besar.
+- **Contoh materi**: Men-deploy aplikasi menggunakan Kubernetes, konfigurasi cluster, dan manajemen pods.
 
-## How to Use This Repository
+### 8. `8_monitoring/`
+- **Deskripsi**: Panduan lengkap untuk memonitor aplikasi menggunakan berbagai alat seperti **Prometheus**, **Grafana**, **APM**, **ElasticSearch**, dan **Kibana**.
+- **Contoh materi**: Integrasi Prometheus dan Grafana untuk monitoring metrik, konfigurasi APM untuk memantau kinerja aplikasi, dan penggunaan ElasticSearch untuk menganalisis log.
 
-This repository contains separate documentation files for each of the core technologies:
+### 9. `9_jmeter/`
+- **Deskripsi**: Panduan untuk melakukan **load testing** menggunakan **JMeter**.
+- **Contoh materi**: Menyusun skenario pengujian beban, pengukuran kinerja API, dan analisis hasil tes.
 
-- [Linux Basics](./2.%20Linux.md)
-- [Docker Overview](./3.%20Docker.md)
-- [Kubernetes Basics](./4.%20Kubernetes.md)
-- [PostgreSQL Overview](./5.%20Postgresql.md)
-- [Redis Overview](./6.%20Redis.md)
+### 10. `10_api_testing/`
+- **Deskripsi**: Pembelajaran tentang **API testing** menggunakan **Postman**.
+- **Contoh materi**: Membuat dan mengelola koleksi Postman, pengujian endpoint GraphQL, dan menggunakan Postman untuk testing otomatis.
 
-Feel free to explore each file and use them as references during your learning journey. This documentation is designed to help you build a strong foundation for deploying and managing Hasura in real-world applications.
+---
 
-Happy learning!
+## Urutan Pembelajaran yang Disarankan
+
+Berikut adalah urutan pembelajaran yang disarankan untuk memulai proyek ini, dimulai dari pemahaman dasar hingga penggunaan alat untuk monitoring dan testing aplikasi:
+
+1. **Linux** - Memahami dasar-dasar Linux dan pengelolaan server.
+2. **Docker** - Belajar containerization dan cara menjalankan aplikasi dalam container.
+3. **Database** (PostgreSQL, MySQL, MSSQL) - Mengonfigurasi database yang akan digunakan dengan Hasura.
+4. **Hasura v2** - Menguasai Hasura v2 sebagai platform backend untuk aplikasi GraphQL.
+5. **Hasura v3** - Pembelajaran tentang Hasura v3 dan fitur-fitur barunya.
+6. **Redis** - Penggunaan Redis untuk caching dan meningkatkan performa aplikasi.
+7. **Kubernetes** - Memahami deployment dan orkestrasi aplikasi menggunakan Kubernetes.
+8. **Monitoring** (Prometheus, Grafana, APM, ElasticSearch, Kibana) - Menggunakan berbagai alat untuk monitoring metrik dan log aplikasi.
+9. **JMeter** - Menggunakan JMeter untuk menguji performa aplikasi dengan beban tinggi.
+10. **API Testing** (Postman) - Menggunakan Postman untuk menguji API, termasuk GraphQL endpoint Hasura.
+
+---
+
+## Kontribusi
+
+Jika kamu ingin berkontribusi pada proyek ini, silakan lakukan fork dan kirim pull request dengan perubahan yang kamu buat. Pastikan untuk mengikuti pedoman kontribusi dan melakukan pengujian sebelum mengajukan perubahan.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE.md).
+
+---
+
+Ini adalah file `README.md` yang bisa kamu gunakan untuk folder root dari repo. Ini memberikan gambaran umum yang jelas mengenai isi repo, urutan pembelajaran yang disarankan, dan penjelasan singkat tentang folder-folder yang ada. Semoga sesuai dengan kebutuhanmu! Apakah ada bagian yang perlu diubah atau ditambahkan?
