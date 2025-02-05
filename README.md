@@ -86,5 +86,3 @@ Jika kamu ingin berkontribusi pada proyek ini, silakan lakukan fork dan kirim pu
 Proyek ini dilisensikan di bawah [MIT License](LICENSE.md).
 
 ---
-
-Ini adalah file `README.md` yang bisa kamu gunakan untuk folder root dari repo. Ini memberikan gambaran umum yang jelas mengenai isi repo, urutan pembelajaran yang disarankan, dan penjelasan singkat tentang folder-folder yang ada. Semoga sesuai dengan kebutuhanmu! Apakah ada bagian yang perlu diubah atau ditambahkan?
